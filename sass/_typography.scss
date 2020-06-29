@@ -1,0 +1,38 @@
+%heading { //for extend
+    font-family: $font-display;
+    font-weight: 400;
+}
+
+.heading-1 {
+    @extend %heading;
+    font-size: 6rem;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.heading-2 {
+    @extend %heading;
+    font-size: 5rem;
+    color: #fff;
+    line-height: 1.2;    
+    text-transform: uppercase;
+
+    span {
+    font-size: 5rem;
+    color: $color-tertiary-light;
+    }
+}
+
+.heading-3 {
+    @extend %heading;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-4 {
+    @extend %heading;
+    font-size: 1.6rem;
+    color: #fff;
+    text-transform: uppercase;
+}

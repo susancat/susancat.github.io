@@ -1,0 +1,203 @@
+//BUTTON INLINE
+.btn-inline {
+    border: none;
+    color: $color-secondary-dark;
+    font-size: 1.4rem;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+
+    & span {
+        margin-left: 3px;
+        transition: all .2s;
+    }
+
+    &:hover {
+        color:  $color-primary-light;
+
+        span {
+            margin-left: 8px;
+        }
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    50% {
+        box-shadow: 1 1rem 4rem rgba(0, 0, 0, .25) ;
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
+
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;/*delete the underline*/
+        padding: 1rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s; 
+        /*transition has be put in the primary element, not spcific hover.active*/
+        position: relative;
+        font-size: 1.6rem;
+
+        //change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    }
+
+    &::after {
+        content: "";/*has to clarify otherwise content gone*/
+        display: inline-block;
+        height: 100%;/*100% of the button*/
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;/*its reference, parent ele is btn*/
+        top: 0;
+        left: 0;/*no it occupy the whole text-box until we set btn's position as relative*/
+        z-index: -1;
+        /*before we set z-index it's on the top*/
+        transition: all .4s; /*se the duration for scale*/
+    }
+
+    &--blue {
+        background-color: $color-tertiary-light;
+        color:#fff;
+
+        &::after {
+            background-color: $color-tertiary-light;
+        }
+    }
+
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        /* we put .75s delay here */
+        animation-fill-mode: backwards;
+    }
+
+    
+}
+
+.btn-light {
+    display:inline-block;
+    padding: 0.8rem 1.6rem;
+    border: 0;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: $color-grey-light-1;
+    transition: all .4s ease-out;
+    width: 65%;
+    text-align: center;  
+
+    &:link,
+    &:visited {
+        color: $color-grey-dark-3;
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: $color-secondary-dark;
+    }
+}
+
+.btn-dark {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border: 0;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 3px;
+    background: $color-grey-dark-3;
+    transition: all .4s ease-out;
+    width: 65%;
+    text-align: center;  
+
+    &:link,
+    &:visited {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: $color-secondary-dark;
+    }
+}
+
+.btn-big {
+    background-color: $color-tertiary-light;
+    color: #fff;
+    border: none;
+    border-radius: 10rem;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        background-color: #fff;
+        color: $color-tertiary-light;
+    }
+}
+
+.box {
+    width: 50%;
+    height: 60%;
+    background-color: rgba(#fff, .3);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    transition: all .3s; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+        color:$color-secondary-dark;
+    }
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+        padding: 1.5rem;
+    }
+}

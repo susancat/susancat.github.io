@@ -1,0 +1,49 @@
+//COLOR
+$color-primary-light: #FF3366;
+$color-primary-dark: #BA265D;
+
+$color-secondary-light: #f5efb8;
+$color-secondary-dark: #f3f709;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-black: #000;
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;//1rem = 10px,16/10=62.5%
+}
+
+body {
+    font-family: $font-primary;
+    color: $color-grey-dark-2;
+    padding: 0 3rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(6 [col-start], 1fr [col-end]);
+    grid-template-rows: 1fr repeat(3, 100vh) 95vh 5vh;
+}

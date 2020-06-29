@@ -1,0 +1,179 @@
+.aboutme {
+    display: grid;
+    grid-template-rows: 15% 40% 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    background-image: linear-gradient(rgba($color-grey-dark-3, .9),rgba($color-grey-dark-3, .9));
+    background-size: cover;
+    background-position: center;
+
+    &__title {
+        grid-column: 1 / 3;
+        margin-top: 2rem;
+        margin-left: 3rem;
+        width: 60%;
+        border-bottom: 2px solid #fff;
+        box-shadow: 0 1rem 3rem rgba($color-grey-dark-3, .1);
+    }
+
+    &__img {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        position: relative;
+    }
+
+    &__photo {
+        width: 30%;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__bio {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        margin-right: 3rem;
+        margin-left: 3rem
+    }
+
+    &__h3 {
+        text-align: center;
+        font-size: 3rem;
+        color: $color-tertiary-light;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    &__edu {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+        margin-left: 3rem;
+    }
+
+    &__edu-col{
+        margin: 2rem auto;
+        -moz-column-count: 2;
+        -moz-column-gap: 4rem;//1em=14px
+        -moz-column-rule: 1px solid $color-grey-light-2;
+
+        column-count: 2;
+        column-gap: 4rem;//1em=14px
+        column-rule: 2px solid $color-grey-light-2;
+    }
+    &__h4 {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    &__h5 {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 300;
+
+        span {
+            color: $color-secondary-dark;
+        }
+    }
+    
+    &__cuhk {
+        margin-top: 1rem;
+    }
+
+    &__degree-2 {
+        margin-top: 1rem;
+    }
+
+    &__skills {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+        margin-left: 3rem;
+    }
+
+    &__progress {
+        width: 80%;
+        height: 1.6rem;
+        border:1px solid #ccc;
+        border-radius: 15px;
+        margin: 0;
+        overflow: hidden;
+        box-shadow: 0 0 .5rem .5rem #ddd inset;
+
+        span {
+            display: inline-block;
+            
+            height: 100%;
+            background: #2989d8; /* Old browsers */
+            background: -moz-linear-gradient(45deg, #2989d8 33%, #7db9e8 34%, #7db9e8 59%, #2989d8 60%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left bottom, right top, color-stop(33%,#2989d8), color-stop(34%,#7db9e8), color-stop(59%,#7db9e8), color-stop(60%,#2989d8)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* IE10+ */
+            background: linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2989d8', endColorstr='#2989d8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            background-size: 6rem 3rem;
+            text-align: center;
+            color:#fff;
+        }
+    }
+}
+
+#progress1 span{
+    width: 80%;
+    -webkit-animation:load1 3s ease-in;
+}
+@keyframes load1{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width:80%;
+    }
+}
+
+#progress2 span{
+    width: 80%;
+    -webkit-animation:load2 3s ease-in;
+}
+@keyframes load2{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width:80%;
+    }
+}
+
+#progress3 span{
+    width: 70%;
+    -webkit-animation:load3 3s ease-in;
+}
+@keyframes load3{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width:70%;
+    }
+}
+
+#progress4 span{
+    width: 75%;
+    -webkit-animation:load4 3s ease-in;
+}
+@keyframes load4{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width:75%;
+    }
+}

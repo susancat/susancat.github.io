@@ -1,0 +1,42 @@
+.header {
+    height: 100vh;
+    grid-column: 1 / -1;
+    background-image: linear-gradient(to right,
+        rgba($color-grey-dark-3, .9),rgba($color-grey-dark-3, .9)),
+        url(../img/desktop.jpg);
+        background-size: cover;
+        background-position: center;
+        padding: 15rem;
+        display: grid;
+        grid-template-rows: 20% minmax(min-content,max-content) 50%;
+        grid-template-columns: 20% minmax(min-content, max-content) repeat(2,20%);
+        grid-row-gap: 1.5rem;
+    &__text-box {
+        grid-row: 2 / 3;
+        grid-column: 2 / span 1;
+    }
+
+    &__icons {
+        grid-row: 3 / 4;
+        grid-column: 2 / span 1;
+        justify-items: end;
+    }
+    &__icons a{
+        
+        &:link,
+        &:visited {
+            color: #fff;
+            margin-right: 1rem;
+            box-shadow: 0 1rem 2rem rgba($color-grey-dark-3, .9);
+        }
+
+        &:hover {
+            color: $color-tertiary-light;
+            transition: color .4s ease-out;
+            // transition: translateY .4s;
+            // transform: translateY(-5px);
+        }
+    }
+
+}
+

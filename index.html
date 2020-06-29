@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/jpg" href="img/shiba-1.jpg">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+    <title>Irene web dev&mdash;Portfolio</title>
+</head>
+<body class=container>
+    <div class="navigation">
+        <input id="nav-toggle" type="checkbox" class="navigation__checkbox">
+        <label for="nav-toggle" class="navigation__button">
+            <span class="navigation__icon"></span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+            <figure class="navigation__img">
+                <img src="img/me1.jpg" alt="my photo" class="navigation__photo">
+            </figure>
+
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#home" class="navigation__link"><span>01</span>Home</a></li>
+                <li class="navigation__item"><a href="#aboutme" class="navigation__link"><span>02</span>About me</a></li>
+                <li class="navigation__item"><a href="#mywork" class="navigation__link"><span>04</span>My work</a></li>
+                <li class="navigation__item"><a href="#contactme" class="navigation__link"><span>05</span>Contact me</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="header" id="home">
+        <div class="header__text-box">
+            <h1 class="heading-1">Irene Zhang</h1>
+            <h3 class="heading-3">&mdash;&mdash;Full stack Web Developer</h3>
+            
+        </div>
+        <div class="header__icons">
+            <a href="https://github.com/susancat" target="_blank" class="header__icons-git"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/irene-zhang-970701/" target="_blank" class="header__icons-in"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/irene.jyzhang" target="_blank" class="header__icons-fb"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
+            <a href="#" class="header__icons-google"><i class="fa fa-google fa-3x" aria-hidden="true"></i></a>
+        </div>
+    </header>
+
+    <div class="aboutme" id="aboutme">
+        <div class="aboutme__title">
+            <h2 class="heading-2">About <span>me</span></h2>
+        </div>
+
+        <figure class="aboutme__img">
+            <img src="img/me1.jpg" alt="my photo" class="aboutme__photo">
+        </figure>
+
+        <div class="aboutme__bio">
+            <h3 class="aboutme__h3">BIO</h3>
+            <p class="aboutme__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea mollitia accusantium necessitatibus quisquam, quaerat provident vitae modi tenetur! Libero repudiandae eaque, nisi deleniti id error officiis, voluptas pariatur soluta laboriosam eos deserunt, asperiores possimus quas sunt molestiae cum et? Ratione totam alias optio facilis laudantium omnis explicabo laborum, id assumenda eaque ad quae sed et sit! Consectetur similique minus, fugiat porro suscipit unde excepturi iure, autem harum, dolorum amet velit repellendus. Deserunt expedita dolorem id, veniam provident, impedit dolore adipisci officia ipsam error earum eaque iste mollitia. Voluptate, obcaecati alias aperiam possimus fuga maiores, dolore illo perferendis recusandae odit voluptatibus.
+            </p>
+        </div>
+        
+        <div class="aboutme__edu">
+            <h3 class="aboutme__h3">Education</h3>
+            <div class="aboutme__edu-col">
+                <div class="aboutme__edu-left">
+                    <div class="aboutme__uofg">
+                        <h4 class="aboutme__h4">University of Glasgow</h4>
+                        <h5 class="aboutme__h5">2018-2019</h5>
+                    </div>
+                    <div class="aboutme__cuhk">
+                        <h4 class="aboutme__h4">The Chinese University of Hong Kong</h4>
+                        <h5 class="aboutme__h5">2007-2013</h5>
+                    </div>
+                </div>
+                <div class="aboutme__edu-right">
+                    <div class="aboutme__degree-1">
+                        <h4 class="aboutme__h4">M.Sc. in Information Technology</h4>
+                        <h5 class="aboutme__h5">with <span>MERIT</span></h5>
+                    </div>
+                    <div class="aboutme__degree-2">
+                        <h4 class="aboutme__h4">Ph.D. in Gender Studies/Political Science</h4>
+                    </div>
+                </div>      
+            </div>                        
+                <button class="btn-inline">Download my CV <span>&darr;</span></button>
+            
+        </div>
+
+        <div class="aboutme__skills">
+            <h3 class="aboutme__h3">top Skills</h3>
+
+            <div class="aboutme__js">
+                <h4 class="aboutme__h4">Javascript/Node.JS</h4>
+                <div class="aboutme__progress" id="progress1"><span></span></div>
+            </div>
+            <div class="aboutme__css">
+                <h4 class="aboutme__h4">Advanced Css and Sass</h4>
+                <div class="aboutme__progress" id="progress2"><span></span></div>
+            </div>
+            <div class="aboutme__lib">
+                <h4 class="aboutme__h4">React.JS/Express.JS</h4>
+                <div class="aboutme__progress" id="progress3"><span></span></div>
+            </div>
+            <div class="aboutme__db">
+                <h4 class="aboutme__h4">MongoDB/Mongoose/PostgreSQL</h4>
+                <div class="aboutme__progress" id="progress4"><span></span></div>
+            </div>
+
+            <button onclick="window.location.href='#mywork'" class="btn-inline">My Projects <span>&rarr;</span></button>
+        </div>
+    </div>
+
+    <section class="works" id="mywork">
+        <div class="works__title">
+            <h2 class="heading-2">My <span>Work</span></h2>
+        </div>
+    
+        <section class="works__projs">
+            <div class="works__proj">
+                <a herf="#" class="works__item">
+                    <img class="works__img" src="img/project1.jpg" alt="web project 1">
+                </a>
+                <a href="#" class="btn-light"><i class="fa fa-eye" aria-hidden="true"></i> Project</a>
+                <a href="#" class="btn-dark"><i class="fa fa-github" aria-hidden="true"> Github</i></a>
+            </div>
+            <div class="works__proj">
+                <a herf="#" class="works__item">
+                    <img class="works__img" src="img/project2.jpg" alt="web project 2">
+                </a>
+                <a href="#" class="btn-light"><i class="fa fa-eye" aria-hidden="true"></i> Project</a>
+                <a href="#" class="btn-dark"><i class="fa fa-github" aria-hidden="true"> Github</i></a>
+            </div>
+            <div class="works__proj">
+                <a herf="#" class="works__item">
+                    <img class="works__img" src="img/project3.jpg" alt="web project 3">
+                </a>
+                <a href="#" class="btn-light"><i class="fa fa-eye" aria-hidden="true"></i> Project</a>
+                <a href="#" class="btn-dark"><i class="fa fa-github" aria-hidden="true"> Github</i></a>
+            </div>
+            <div class="works__proj">
+                <a herf="#" class="works__item">
+                    <img class="works__img" src="img/project4.jpg" alt="web project 4">
+                </a>
+                <a href="#" class="btn-light"><i class="fa fa-eye" aria-hidden="true"></i> Project</a>
+                <a href="#" class="btn-dark"><i class="fa fa-github" aria-hidden="true"> Github</i></a>
+            </div>
+            <div class="works__proj">
+                <a herf="#" class="works__item">
+                    <img class="works__img" src="img/project5.jpg" alt="web project 5">
+                </a>
+                <a href="#" class="btn-light"><i class="fa fa-eye" aria-hidden="true"></i> Project</a>
+                <a href="#" class="btn-dark"><i class="fa fa-github" aria-hidden="true"> Github</i></a>
+            </div>
+            <div class="works__proj">
+                <a herf="#" class="works__item">
+                    <img class="works__img" src="img/project6.jpg" alt="web project 6">
+                </a>
+                <a href="#" class="btn-light"><i class="fa fa-eye" aria-hidden="true"></i> Project</a>
+                <a href="#" class="btn-dark"><i class="fa fa-github" aria-hidden="true"> Github</i></a>
+            </div>
+        </section>
+    </section>
+
+    <div class="contact" id="contactme">
+        <div class="contact__title">
+            <h2 class="heading-2">contact <span>me</span></h2>
+        </div>
+        
+        <div class="contact__info">
+            <div class="contact__mail box">
+                <h4 class="heading-4">
+                    <span>Email: </span>zhangjiayu71@hotmail.com
+                </h4>            
+            </div>
+            <div class="contact__mobile box">
+                <h4 class="heading-4">
+                    <span>Phone: </span>(86)15877367245
+                </h4>
+            </div>
+            <div class="contact__free box">
+                <h4 class="heading-4">
+                    <span>Freelance/Remote </span>available
+                </h4>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2020 Designed and developed by Irene Zhang. All rights reserved.
+    </footer>
+
+    <div class="popup">
+        popup
+    </div>
+
+    <script src="https://kit.fontawesome.com/3c82f064fb.js" crossorigin="anonymous"></script>  
+
+<!-- JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/components/accordion.js"></script> -->
+    <script src="js/main.js"></script>
+</body>
+</html>
