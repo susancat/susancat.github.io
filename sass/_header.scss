@@ -14,12 +14,28 @@
     &__text-box {
         grid-row: 2 / 3;
         grid-column: 2 / span 1;
+
+        @include respond(tab-land) {
+            grid-column: 2 / span 2;
+        }
     }
 
     &__icons {
         grid-row: 3 / 4;
         grid-column: 2 / span 1;
         justify-items: end;
+
+        @include respond(tab-land) {
+            grid-column: 2 / span 2;
+        }
+
+        @include respond(tab-port) {
+            font-size: 1rem;
+        }
+
+        @include respond(smphone) {
+            font-size: .5rem;
+        }
     }
     &__icons a{
         

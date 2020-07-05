@@ -1,6 +1,6 @@
 .works {
     display: grid;
-    grid-template-rows: 15% repeat(2, 1fr);
+    grid-template-rows: 15% repeat(2,1fr);
     // grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
 
@@ -8,48 +8,88 @@
     background-size: cover;
     background-position: center;
 
+    @include respond(smphone) {
+        grid-template-rows: 10% repeat(2,1fr);
+    }
+
     &__item {
         display: flex;
         justify-content: center;
         height: 100%;
         width: 100%;
         transition: all .3s;
+
+        @include respond(phone) {
+            height: 60%;
+        }
     }
 
     &__invisible-1 {
-        display: inline-block;
-        position: absolute;
-        padding: 2rem 0rem;
+        @include desproj;
         left: 12%;
         top: 224%;
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #fff;
-        opacity: 0;
+
+        @include respond(tab-land) {
+            left: 11%;
+            top: 223%;
+        }
+
+        @include respond(tab-port) {
+            font-size: 1.2rem;
+        }
+
+        @include respond(phone) {
+            left: 8%;
+            top: 223%;
+        }
+
+        @include respond(smphone) {
+            left: 30%;
+            top: 225%;
+            font-size: 2rem;
+        }
     }
 
     &__invisible-2 {
-        display: inline-block;
-        position: absolute;
-        padding: 2rem 0rem;
-        left: 47%;
+        @include desproj;
+        left: 45%;
         top: 224%;
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #fff;
-        opacity: 0;
+
+        @include respond(tab-land) {
+            left: 43%;
+            top: 223%;
+        }
+
+        @include respond(tab-port) {
+            font-size: 1.2rem;
+        }
+
+        @include respond(smphone) {
+            left: 30%;
+            top: 267%;
+            font-size: 2rem;
+        }
     }
 
     &__invisible-3 {
-        display: inline-block;
-        position: absolute;
-        padding: 2rem 0rem;
+        @include desproj;
         left: 78%;
         top: 224%;
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #fff;
-        opacity: 0;
+
+        @include respond(tab-land) {
+            left: 75%;
+            top: 223%;
+        }
+
+        @include respond(tab-port) {
+            font-size: 1.2rem;
+        }
+
+        @include respond(smphone) {
+            left: 30%;
+            top: 310%;
+            font-size: 2rem;
+        }
     }
 
     &__img {
@@ -77,11 +117,7 @@
 
     &__title {
         grid-column: 1 / -1;
-        margin-top: 2rem;
-        margin-left: 3rem;
-        width: 60%;
-        border-bottom: 2px solid #fff;
-        box-shadow: 0 1rem 3rem rgba($color-grey-dark-3, .1);
+        @include title;
     }
 
     &__projs {
@@ -89,6 +125,10 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         // grid-gap: 1rem;
+        @include respond(smphone) {
+            display: inline;
+        }
+
     }
 
     &__proj {
@@ -98,3 +138,24 @@
         align-items: center;
     }
 }
+
+// .proj1 {
+//     @include respond(smphone) {
+//         grid-row: 2 / 3;
+//         grid-column: 1 / 2;
+//     }
+// }
+
+// .proj2 {
+//     @include respond(smphone) {
+//         grid-row: 2 / 3;
+//         grid-column: 2 / 3;
+//     }
+// }
+
+// .proj3 {
+//     @include respond(smphone) {
+//         grid-row: 3 / 4;
+//         grid-column: 1 / span 1;
+//     }
+// }

@@ -1,0 +1,50 @@
+@mixin desproj {
+    display: inline-block;
+    position: absolute;
+    padding: 2rem 0rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    opacity: 0;
+}
+
+@mixin title {
+    margin-top: 2rem;
+    margin-left: 3rem;
+    width: 60%;
+    border-bottom: 2px solid #fff;
+    box-shadow: 0 1rem 3rem rgba($color-grey-dark-3, .1);
+}
+//MEDIA QUERY MANAGER
+/*0-600px:   phone;
+600-1000px:   tablet portrait
+1000-1200:    table landscape
+1200-1800:   desktop--normal style applies
+1800+:       big desktop
+*/
+/*breakpoint argument choices:
+- phone
+-tab-port
+-tab-land
+-big-desktop
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == smphone {
+        @media only screen and (max-width: 37.5em) {@content}; //600px
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 50em) {@content}; //800px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 62.5em) {@content}; //1000px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) {@content}; //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) {@content}; //1800px
+    }
+}

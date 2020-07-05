@@ -7,13 +7,20 @@
     background-size: cover;
     background-position: center;
 
+    @include respond(phone) {
+        grid-template-rows: 15% 35% 1fr;
+        grid-template-columns: 30% 70%;
+    }
+
+    @include respond(smphone) {
+        grid-template-rows: 15% 35% 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+
     &__title {
         grid-column: 1 / 3;
-        margin-top: 2rem;
-        margin-left: 3rem;
-        width: 60%;
-        border-bottom: 2px solid #fff;
-        box-shadow: 0 1rem 3rem rgba($color-grey-dark-3, .1);
+        @include title;
     }
 
     &__img {
@@ -30,13 +37,19 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        @include respond(phone) {
+            width: 50%;
+        }
     }
 
     &__bio {
         grid-row: 2 / 3;
         grid-column: 2 / 3;
         margin-right: 3rem;
-        margin-left: 3rem
+        margin-left: 3rem;
+        display: flex;
+        flex-direction: column;
     }
 
     &__h3 {
@@ -50,12 +63,22 @@
         color: #fff;
         font-size: 1.5rem;
         font-weight: 300;
+        justify-self: center;
+
+        @include respond(tab-port) {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
     }
 
     &__edu {
         grid-row: 3 / 4;
         grid-column: 1 / 2;
         margin-left: 3rem;
+
+        @include respond(phone) {
+            display: none;
+        }
     }
 
     &__edu-col{
@@ -96,7 +119,21 @@
         grid-row: 3 / 4;
         grid-column: 2 / 3;
         margin-left: 3rem;
+
+        @include respond(phone) {
+            grid-column: 1 / span 2;
+        }
     }
+    &__bars {
+        @include respond(phone) {
+            margin: 0 8rem;
+        }
+
+        @include respond(smphone) {
+            margin: 0 4rem;
+        }
+    }
+
 
     &__progress {
         width: 80%;

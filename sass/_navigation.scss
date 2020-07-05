@@ -15,6 +15,16 @@
         text-align: center;
         cursor: pointer;
         z-index: 2000;
+
+        @include respond(phone) {
+            top: 4rem;
+            right: 4rem;
+        }
+
+        @include respond(smphone) {
+            top: 3rem;
+            right: 3rem;
+        }
     }
 
     &__background {
@@ -31,6 +41,21 @@
         // &.show {
         //     transform: scale(80);
         // }
+        @include respond(tab-port) {
+            transition: transform .6s cubic-bezier(.86, 0, .07, 1);
+        }
+
+        @include respond(phone) {
+            top: 4.5rem;
+            right: 4.5rem;
+            transition: transform .5s cubic-bezier(.86, 0, .07, 1);
+        }
+
+        @include respond(smphone) {
+            top: 3.5rem;
+            right: 3.5rem;
+            transition: transform .3s cubic-bezier(.86, 0, .07, 1);
+        }
     }
 
     &__nav {
@@ -52,22 +77,39 @@
         //     opacity: .8;
         //     width: 100%;
         // }
+
+        @include respond(phone) {
+            justify-content: center;
+        }
     }
 
-    // &__img {
-    //     // position;
-
-    // }
+    &__img {
+        @include respond(phone) {
+            transform: translateX(-200%);
+        }
+    }
 
     &__photo {
         width: 65%;
         border-radius: 50%;
         border: 3px solid #fff;
+        overflow: hidden;
     }
 
     &__list {
         list-style: none;
+
+        @include respond(phone) {
+            width: 100%;
+        }
         // width: 100%;
+        @include respond(smphone) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }   
     }
 
     &__link {
@@ -87,6 +129,10 @@
             #fff 50%);
             background-size: 225%;//when it change, the position of gradient change along
             transition: all .4s;
+
+            @include respond(phone) {
+                font-size: 2rem;
+            }
 
             span {
                 margin-right: 1.5rem;
