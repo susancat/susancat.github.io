@@ -26,68 +26,43 @@
 
     &__invisible-1 {
         @include desproj;
-        left: 12%;
-        top: 224%;
 
-        @include respond(tab-land) {
-            left: 11%;
-            top: 223%;
-        }
+        justify-self: center;
+        align-self: center;
 
         @include respond(tab-port) {
             font-size: 1.2rem;
         }
 
-        @include respond(phone) {
-            left: 8%;
-            top: 223%;
-        }
-
         @include respond(smphone) {
-            left: 30%;
-            top: 225%;
             font-size: 2rem;
         }
     }
 
     &__invisible-2 {
         @include desproj;
-        left: 45%;
-        top: 224%;
-
-        @include respond(tab-land) {
-            left: 43%;
-            top: 223%;
-        }
+        justify-self: center;
+        align-self: center;
 
         @include respond(tab-port) {
             font-size: 1.2rem;
         }
 
         @include respond(smphone) {
-            left: 30%;
-            top: 267%;
             font-size: 2rem;
         }
     }
 
     &__invisible-3 {
         @include desproj;
-        left: 78%;
-        top: 224%;
-
-        @include respond(tab-land) {
-            left: 75%;
-            top: 223%;
-        }
+        justify-self: center;
+        align-self: center;
 
         @include respond(tab-port) {
             font-size: 1.2rem;
         }
 
         @include respond(smphone) {
-            left: 30%;
-            top: 310%;
             font-size: 2rem;
         }
     }
@@ -138,24 +113,3 @@
         align-items: center;
     }
 }
-
-// .proj1 {
-//     @include respond(smphone) {
-//         grid-row: 2 / 3;
-//         grid-column: 1 / 2;
-//     }
-// }
-
-// .proj2 {
-//     @include respond(smphone) {
-//         grid-row: 2 / 3;
-//         grid-column: 2 / 3;
-//     }
-// }
-
-// .proj3 {
-//     @include respond(smphone) {
-//         grid-row: 3 / 4;
-//         grid-column: 1 / span 1;
-//     }
-// }
