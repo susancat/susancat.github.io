@@ -481,23 +481,13 @@ body {
     font-weight: 700;
     color: #fff;
     opacity: 0;
-    left: 12%;
-    top: 224%; }
-    @media only screen and (max-width: 75em) {
-      .works__invisible-1 {
-        left: 11%;
-        top: 223%; } }
+    justify-self: center;
+    align-self: center; }
     @media only screen and (max-width: 62.5em) {
       .works__invisible-1 {
         font-size: 1.2rem; } }
-    @media only screen and (max-width: 50em) {
-      .works__invisible-1 {
-        left: 8%;
-        top: 223%; } }
     @media only screen and (max-width: 37.5em) {
       .works__invisible-1 {
-        left: 30%;
-        top: 225%;
         font-size: 2rem; } }
   .works__invisible-2 {
     display: inline-block;
@@ -507,19 +497,13 @@ body {
     font-weight: 700;
     color: #fff;
     opacity: 0;
-    left: 45%;
-    top: 224%; }
-    @media only screen and (max-width: 75em) {
-      .works__invisible-2 {
-        left: 43%;
-        top: 223%; } }
+    justify-self: center;
+    align-self: center; }
     @media only screen and (max-width: 62.5em) {
       .works__invisible-2 {
         font-size: 1.2rem; } }
     @media only screen and (max-width: 37.5em) {
       .works__invisible-2 {
-        left: 30%;
-        top: 267%;
         font-size: 2rem; } }
   .works__invisible-3 {
     display: inline-block;
@@ -529,19 +513,13 @@ body {
     font-weight: 700;
     color: #fff;
     opacity: 0;
-    left: 78%;
-    top: 224%; }
-    @media only screen and (max-width: 75em) {
-      .works__invisible-3 {
-        left: 75%;
-        top: 223%; } }
+    justify-self: center;
+    align-self: center; }
     @media only screen and (max-width: 62.5em) {
       .works__invisible-3 {
         font-size: 1.2rem; } }
     @media only screen and (max-width: 37.5em) {
       .works__invisible-3 {
-        left: 30%;
-        top: 310%;
         font-size: 2rem; } }
   .works__img {
     width: 65%;
