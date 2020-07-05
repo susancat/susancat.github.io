@@ -59,4 +59,8 @@
     font-size: 1.6rem;
     color: #fff;
     text-transform: uppercase;
+
+    @include respond(smphone) {
+        font-size: 1.2rem;
+    }
 }
