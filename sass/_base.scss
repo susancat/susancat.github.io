@@ -56,6 +56,6 @@ body {
     }
 
     @include respond(smphone) {
-        grid-template-rows: min-content 100vh 100vh 170vh 95vh 5vh;
+        grid-template-rows: min-content 100vh 100vh 1fr 95vh 5vh;
     }
 }
