@@ -26,7 +26,7 @@
     text-transform: uppercase;
 
     @include respond(smphone) {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     span {
@@ -34,7 +34,7 @@
     color: $color-tertiary-light;
 
         @include respond(smphone) {
-            font-size: 4rem;
+            font-size: 3.5rem;
         }
     }
 }
