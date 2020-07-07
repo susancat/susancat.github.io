@@ -16,6 +16,10 @@
     @include respond(tab-port) {
         font-size: 4rem;
     }
+
+    @include respond(phone) {
+        font-size: 3.5rem;
+    }
 }
 
 .heading-2 {
@@ -25,6 +29,10 @@
     line-height: 1.2;    
     text-transform: uppercase;
 
+    @include respond(phone) {
+        font-size: 4rem;
+    }
+
     @include respond(smphone) {
         font-size: 3.5rem;
     }
@@ -32,6 +40,10 @@
     span {
     font-size: 5rem;
     color: $color-tertiary-light;
+
+        @include respond(phone) {
+            font-size: 4rem;
+        }    
 
         @include respond(smphone) {
             font-size: 3.5rem;

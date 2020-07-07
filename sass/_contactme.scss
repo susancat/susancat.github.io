@@ -7,6 +7,10 @@
     background-size: cover;
     background-position: center;
 
+    @include respond(phone) {
+        grid-template-rows: min-content 1fr;
+    }
+
     &__title {
         @include title;
     }

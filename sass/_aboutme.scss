@@ -8,12 +8,12 @@
     background-position: center;
 
     @include respond(phone) {
-        grid-template-rows: 15% 35% 1fr;
+        grid-template-rows:repeat(3, min-content);
         grid-template-columns: 30% 70%;
     }
 
     @include respond(smphone) {
-        grid-template-rows: 15% 35% 1fr;
+        // grid-template-rows: 15% 35% 1fr;
         grid-template-columns: 1fr;
         grid-gap: 0;
     }

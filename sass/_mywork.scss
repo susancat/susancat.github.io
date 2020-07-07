@@ -1,21 +1,25 @@
 .works {
     display: grid;
-    grid-template-rows: 15% min-content;
+    grid-template-rows: 15% 85%;
     // grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 2rem;
 
     background-image: linear-gradient(rgba($color-grey-dark-3, .9),rgba($color-grey-dark-3, .9));
     background-size: cover;
     background-position: center;
 
-    @include respond(smphone) {
-        grid-template-rows: 10% 1fr;
+    @include respond(phone) {
+        grid-template-rows: min-content 1fr;
+    }
+
+    &__title {
+        @include title;
     }
 
     &__item {
         display: flex;
         justify-content: center;
-        // height: 100%;
+        height: auto;
         width: 100%;
         transition: all .3s;
 
