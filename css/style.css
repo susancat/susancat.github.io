@@ -36,13 +36,10 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(6 [col-start], 1fr [col-end]);
-  grid-template-rows: 1fr repeat(3, 100vh) 95vh 5vh; }
+  grid-template-rows: 1fr repeat(3, minmax(100vh, max-content)) 95vh 5vh; }
   @media only screen and (max-width: 50em) {
     .container {
-      grid-template-rows: min-content 100vh 100vh 100vh 95vh 5vh; } }
-  @media only screen and (max-width: 37.5em) {
-    .container {
-      grid-template-rows: min-content 100vh 100vh 1fr 95vh 5vh; } }
+      grid-template-rows: min-content repeat(3, minmax(100vh, max-content)) 95vh 5vh; } }
 
 .header {
   height: 100vh;
