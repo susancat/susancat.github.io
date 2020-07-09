@@ -20,7 +20,7 @@
         display: flex;
         justify-content: center;
         // height: auto;
-        // width: 100%;
+        width: 100%;
         transition: all .3s;
 
         // @include respond(phone) {
@@ -102,7 +102,7 @@
     &__projs {
         // margin-top: 1rem;
         display: grid;
-        grid-template-columns: repeat(3, min-content);
+        grid-template-columns: repeat(3, 1fr);
         // grid-gap: 1rem;
         @include respond(smphone) {
             display: inline;
