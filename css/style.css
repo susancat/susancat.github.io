@@ -227,7 +227,7 @@ body {
     width: 80%; } }
 
 #progress2 span {
-  width: 75%;
+  width: 80%;
   -webkit-animation: load2 3s ease-in; }
 
 @keyframes load2 {
@@ -237,7 +237,7 @@ body {
     width: 80%; } }
 
 #progress3 span {
-  width: 80%;
+  width: 75%;
   -webkit-animation: load3 3s ease-in; }
 
 @keyframes load3 {
