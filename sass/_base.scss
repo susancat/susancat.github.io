@@ -1,22 +1,23 @@
-//COLOR
-$color-primary-light: #FF3366;
-$color-primary-dark: #BA265D;
+// COLOR
+$color-primary-light: #E5E7EB;  // 淺灰（主色-淺，用於背景/邊框）
+$color-primary-dark:  #374151;  // 深灰（主色-深，用於重點字/按鈕）
 
-$color-secondary-light: #f5efb8;
-$color-secondary-dark: #f3f709;
+$color-secondary-light: #FAFAFA; // 幾乎白（大片背景）
+$color-secondary-dark:  #F3F4F6; // 很淡的灰（區塊分隔）
 
-$color-tertiary-light: #2998ff;
-$color-tertiary-dark: #5643fa;
+$color-tertiary-light: #D1D5DB;  // 次要元素/分隔線
+$color-tertiary-dark:  #111827;  // 近黑（標題/強調）
 
-$color-grey-light-1: #f9f7f6;
-$color-grey-light-2: #aaa;
+$color-grey-light-1: #FFFFFF;    // 純白
+$color-grey-light-2: #E5E7EB;    // 淺灰
 
-$color-grey-dark-1: #777;
-$color-grey-dark-2: #999;
-$color-grey-dark-3: #333;
+$color-grey-dark-1:  #4B5563;    // 內文
+$color-grey-dark-2:  #374151;    // 小標/按鈕文字
+$color-grey-dark-3:  #111827;    // 主標/最深層
 
 $color-black: #000;
-// FONT VARIABLES
+
+// FONT
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 

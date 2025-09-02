@@ -29,8 +29,8 @@
         position: relative;
 
         @include respond(smphone) {
-display: none;
-transform: translateX(-100%);
+            display: none;
+            transform: translateX(-100%);
         }
     }
 
@@ -141,83 +141,69 @@ transform: translateX(-100%);
         }
     }
 
-
+    // skills progress bar（平滑、發光、微水面）
     &__progress {
         width: 80%;
         height: 1.6rem;
-        border:1px solid #ccc;
         border-radius: 15px;
-        margin: 0;
         overflow: hidden;
-        box-shadow: 0 0 .5rem .5rem #ddd inset;
+        background: linear-gradient(#bfbfbf, #9a9a9a); 
+        border: 1px solid #aaa;
 
-        span {
-            display: inline-block;
-            
-            height: 100%;
-            background: #2989d8; /* Old browsers */
-            background: -moz-linear-gradient(45deg, #2989d8 33%, #7db9e8 34%, #7db9e8 59%, #2989d8 60%); /* FF3.6+ */
-            background: -webkit-gradient(linear, left bottom, right top, color-stop(33%,#2989d8), color-stop(34%,#7db9e8), color-stop(59%,#7db9e8), color-stop(60%,#2989d8)); /* Chrome,Safari4+ */
-            background: -webkit-linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* Chrome10+,Safari5.1+ */
-            background: -o-linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* Opera 11.10+ */
-            background: -ms-linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* IE10+ */
-            background: linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* W3C */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2989d8', endColorstr='#2989d8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-            background-size: 6rem 3rem;
-            text-align: center;
-            color:#fff;
+    span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        position: relative;
+        overflow: hidden;
+        color: #111;
+        text-align: center;
+
+        /* 白色進度條：帶一點點灰階漸層，方便凸顯閃光 */
+        background: linear-gradient(to bottom, #fdfdfd 0%, #eaeaea 100%);
+        box-shadow:
+        inset 0 0 6px rgba(0,0,0,.1),
+        0 0 6px rgba(255,255,255,.6);
+
+        /* ✨ 光澤掃過 */
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                120deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.95) 42%,   /* 更亮的高光 */
+                rgba(200, 200, 200, 0.4) 48%,   /* 灰色帶，形成邊界 */
+                transparent 55%
+            );
+            background-size: 200% 100%;
+            animation: sheen 2.5s linear infinite;
+            pointer-events: none;
         }
     }
-}
+    }
 
-#progress1 span{
-    width: 90%;
-    -webkit-animation:load1 3s ease-in;
-}
-@keyframes load1{
-    0%{
-        width: 0%;
+    @keyframes sheen {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
     }
-    100%{
-        width:80%;
-    }
-}
 
-#progress2 span{
-    width: 80%;
-    -webkit-animation:load2 3s ease-in;
-}
-@keyframes load2{
-    0%{
-        width: 0%;
+    @keyframes tide {
+    0%,100% { transform: translateY(0) }
+    50%     { transform: translateY(6%) }
     }
-    100%{
-        width:80%;
-    }
-}
 
-#progress3 span{
-    width: 70%;
-    -webkit-animation:load3 3s ease-in;
-}
-@keyframes load3{
-    0%{
-        width: 0%;
-    }
-    100%{
-        width:70%;
-    }
-}
+    /* 你的個別進度（把終點對齊目標寬度） */
+    #progress1 span { width: 90%; animation: load1 1.8s cubic-bezier(.22,.61,.36,1) both; }
+    @keyframes load1 { from { width: 0% } to { width: 90% } }
 
-#progress4 span{
-    width: 70%;
-    -webkit-animation:load4 3s ease-in;
-}
-@keyframes load4{
-    0%{
-        width: 0%;
-    }
-    100%{
-        width:70%;
-    }
+    #progress2 span { width: 80%; animation: load2 1.8s cubic-bezier(.22,.61,.36,1) both; }
+    @keyframes load2 { from { width: 0% } to { width: 80% } }
+
+    #progress3 span { width: 70%; animation: load3 1.8s cubic-bezier(.22,.61,.36,1) both; }
+    @keyframes load3 { from { width: 0% } to { width: 70% } }
+
+    #progress4 span { width: 70%; animation: load4 1.8s cubic-bezier(.22,.61,.36,1) both; }
+    @keyframes load4 { from { width: 0% } to { width: 70% } }
 }

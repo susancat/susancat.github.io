@@ -46,9 +46,20 @@
   /* 卡片可點擊區 */
   &__item {
     position: relative;
-    width: 100%;
     display: block;
+    width: 100%;
     overflow: hidden;
+    z-index: 0;
+      /* tint 遮罩：壓住花俏色彩，但不擋 hover 文字 */
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba($color-black, .20); // 調整強度：.15 ~ .30
+        z-index: 1;               // 在圖片上、在 hover 文字下
+        pointer-events: none;     // 不擋點擊
+        transition: opacity .25s ease;
+    }
 
     &:hover .works__overlay {
       opacity: 1;
@@ -59,12 +70,11 @@
   /* 圖片：統一高度與裁切，避免高低不齊；與下方按鈕留距 */
   &__img {
     width: 100%;
-    display: block;
-    height: 230px;            // 你可改 200–260px 依實際視覺調整
+    aspect-ratio: 5 / 3;   // 或 16 / 9，看你圖片比例
     object-fit: cover;
     border: 3px solid #fff;
+    margin-bottom: 1.5rem;
     transition: all 0.4s ease;
-    margin-bottom: 1.5rem;    // 圖片與按鈕距離
   }
 
   /* Hover Overlay：整張卡片 hover 時浮出 */
@@ -83,8 +93,14 @@
     text-align: center;
     transform: translateY(10%);
     font-size: 1.4rem;
+    z-index: 2;
 
     @include respond(tab-port) { font-size: 1.2rem; }
     @include respond(smphone) { font-size: 2rem; }
+    @include respond(tab-land) {   // 例如平板橫向以上
+        .works__img {
+            aspect-ratio: 16 / 10;
+        }
+    }
   }
 }
