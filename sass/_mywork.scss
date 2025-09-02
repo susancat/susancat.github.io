@@ -1,119 +1,90 @@
+// mywork.scss
+#mywork {
+  min-height: 100dvh;     // 至少滿一屏，內容多時可長高
+  height: auto;
+  padding-block: 3rem;     // 上下留白，避免貼邊
+}
+
 .works {
+  display: grid;
+  grid-template-rows: min-content auto;  // 標題用實際高度，其餘自動延展
+  gap: 2rem;
+
+  background-image: linear-gradient(rgba($color-grey-dark-3, .9), rgba($color-grey-dark-3, .9));
+  background-size: cover;
+  background-position: center;
+
+  @include respond(phone) {
+    grid-template-rows: min-content auto;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    @include title;
+  }
+
+  /* 卡片容器：三欄 → 兩欄（平板）→ 一欄（小手機） */
+  &__projs {
     display: grid;
-    grid-template-rows: 15% 85%;
-    // grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 
-    background-image: linear-gradient(rgba($color-grey-dark-3, .9),rgba($color-grey-dark-3, .9));
-    background-size: cover;
-    background-position: center;
-
-    @include respond(phone) {
-        grid-template-rows: min-content 1fr;
+    @include respond(tab-port) {
+      grid-template-columns: repeat(2, 1fr);
     }
-
-    &__title {
-        @include title;
+    @include respond(smphone) {
+      grid-template-columns: 1fr;
     }
+  }
 
-    &__item {
-        display: flex;
-        justify-content: center;
-        // height: auto;
-        width: 100%;
-        transition: all .3s;
+  &__proj {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-        // @include respond(phone) {
-        //     height: 60%;
-        // }
+  /* 卡片可點擊區 */
+  &__item {
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+
+    &:hover .works__overlay {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
 
-    &__invisible-1 {
-        @include desproj;
+  /* 圖片：統一高度與裁切，避免高低不齊；與下方按鈕留距 */
+  &__img {
+    width: 100%;
+    display: block;
+    height: 230px;            // 你可改 200–260px 依實際視覺調整
+    object-fit: cover;
+    border: 3px solid #fff;
+    transition: all 0.4s ease;
+    margin-bottom: 1.5rem;    // 圖片與按鈕距離
+  }
 
-        justify-self: center;
-        align-self: center;
+  /* Hover Overlay：整張卡片 hover 時浮出 */
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    opacity: 0;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateY(10%);
+    font-size: 1.4rem;
 
-        @include respond(tab-port) {
-            font-size: 1.2rem;
-        }
-
-        @include respond(smphone) {
-            font-size: 2rem;
-        }
-    }
-
-    &__invisible-2 {
-        @include desproj;
-        justify-self: center;
-        align-self: center;
-
-        @include respond(tab-port) {
-            font-size: 1.2rem;
-        }
-
-        @include respond(smphone) {
-            font-size: 2rem;
-        }
-    }
-
-    &__invisible-3 {
-        @include desproj;
-        justify-self: center;
-        align-self: center;
-
-        @include respond(tab-port) {
-            font-size: 1.2rem;
-        }
-
-        @include respond(smphone) {
-            font-size: 2rem;
-        }
-    }
-
-    &__img {
-        width:65%;
-        border: 3px #fff solid;
-        margin-bottom: 1rem;
-        &:hover {
-            opacity: .6;
-            border-color: #fff;
-            transition: all .4s ease-out;
-        }
-    }
-
-    &__img:hover + &__invisible-1 {
-        opacity: 1;
-    }
-
-    &__img:hover + &__invisible-2 {
-        opacity: 1;
-    }
-
-    &__img:hover + &__invisible-3 {
-        opacity: 1;
-    }
-
-    &__title {
-        grid-column: 1 / -1;
-        @include title;
-    }
-
-    &__projs {
-        // margin-top: 1rem;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        // grid-gap: 1rem;
-        @include respond(smphone) {
-            display: inline;
-        }
-
-    }
-
-    &__proj {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+    @include respond(tab-port) { font-size: 1.2rem; }
+    @include respond(smphone) { font-size: 2rem; }
+  }
 }

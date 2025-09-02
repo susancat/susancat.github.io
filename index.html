@@ -16,8 +16,31 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/jpg" href="img/shiba-1.jpg">
     <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
-    <title>Irene web dev&mdash;Portfolio</title>
+    <title>Irene pm&mdash;Portfolio</title>
 </head>
+
+<script>
+document.addEventListener('click', (e) => {
+  const tab = e.target.closest('.modal__tab');
+  if (!tab) return;
+
+  // 阻止 <a href="#tab-xxx"> 改變 URL hash，避免 :target 失效
+  e.preventDefault();
+
+  const modal = tab.closest('.modal');                 // 僅影響當前這個 modal
+  const targetId = tab.dataset.target;
+
+  // 切換 tab 樣式
+  modal.querySelectorAll('.modal__tab').forEach(t => t.classList.remove('is-active'));
+  tab.classList.add('is-active');
+
+  // 切換 panel 顯示
+  modal.querySelectorAll('.modal__panel').forEach(p => p.classList.remove('is-active'));
+  const targetPanel = modal.querySelector('#' + targetId);
+  if (targetPanel) targetPanel.classList.add('is-active');
+});
+</script>
+
 <body class=container><!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS8XN6HW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -46,15 +69,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header class="header" id="home">
         <div class="header__text-box">
-            <h1 class="heading-1">Jiayu Zhang</h1>
-            <h3 class="heading-3">&mdash;&mdash;Project Engineer</h3>
+            <h1 class="heading-2">Jiayu ZHANG, Irene</h1>
+            <h3 class="heading-3">&mdash;&mdash;Tech PM/PO</h3>
             
         </div>
         <div class="header__icons">
             <a href="https://github.com/susancat" target="_blank" class="header__icons-git"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
             <a href="https://www.linkedin.com/in/irene-zhang-970701/" target="_blank" class="header__icons-in"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
-            <a href="https://www.facebook.com/irene.jyzhang" target="_blank" class="header__icons-fb"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
-            <a href="#" class="header__icons-google"><i class="fa fa-google fa-3x" aria-hidden="true"></i></a>
+            <!-- <a href="https://www.facebook.com/irene.jyzhang" target="_blank" class="header__icons-fb"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
+            <a href="#" class="header__icons-google"><i class="fa fa-google fa-3x" aria-hidden="true"></i></a> -->
         </div>
     </header>
 
@@ -70,7 +93,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="aboutme__bio">
             <h3 class="aboutme__h3">BIO</h3>
             <p class="aboutme__text">
-                Hi, my name is Jiayu. I'm a Project Engineer with experience in full-stack web app development, Roblox game development, SQL data analysis, and product management. Possesses a solid understanding of Scrum methodologies, blockchain technology, and decentralized applications. Actively seeking opportunities as a Scrum Product Owner or R&D Engineer in a dynamic web2 company or a forward-looking web3 enterprise.
+                Hi, my name is Jiayu. I'm a Product & Project Manager with 5+ years’ experience in AI, Web3, SaaS and AR/VR integrations. Skilled at optimizing workflows, driving AI tool adoption, and managing cross-functional teams across global markets. Certified Scrum Product Owner (PSPO I), with proven ability to streamline product lifecycles, deliver high-impact integrations, and empower teams with data-driven insights.
             </p>
         </div>
         
@@ -104,19 +127,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h3 class="aboutme__h3">top Skills</h3>
         <div class="aboutme__bars">
             <div class="aboutme__js">
-                <h4 class="aboutme__h4">Scrum/Agile/Product Management/Jira</h4>
+                <h4 class="aboutme__h4">Scrum (PSPO-I) • Product Management • Jira • Agile • Tech PM • AI/Web3 Project Leadership</h4>
                 <div class="aboutme__progress" id="progress1"><span></span></div>
             </div>
             <div class="aboutme__css">
-                <h4 class="aboutme__h4">Javascript/Node.JS/Next.JS/React.JS</h4>
+                <h4 class="aboutme__h4">Prompt Engineering • RAG (FAISS + LangChain) • OpenAI API •  GitHub Showcase</h4>
                 <div class="aboutme__progress" id="progress2"><span></span></div>
             </div>
             <div class="aboutme__lib">
-                <h4 class="aboutme__h4">MongoDB/SQL/Dune/Google BigQuery</h4>
+                <h4 class="aboutme__h4">AWS Lambda • EventBridge • Docker • Next.js • React.js • CI/CD • API Gateway • Terraform</h4>
                 <div class="aboutme__progress" id="progress3"><span></span></div>
             </div>
             <div class="aboutme__db">
-                <h4 class="aboutme__h4">Blockchain/Remix/web3.JS/IPFS</h4>
+                <h4 class="aboutme__h4">SQL • BigQuery • Dune Analytics • GA4 • Dashboard Design • Web3.js • NFT Utility Design</h4>
                 <div class="aboutme__progress" id="progress4"><span></span></div>
             </div>
             <button onclick="window.location.href='#mywork'" class="btn-inline aboutme_projBtn">My Projects <span>&rarr;</span></button>
@@ -125,45 +148,123 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <section class="works" id="mywork">
-        <div class="works__title">
-            <h2 class="heading-2">My <span>Work</span></h2>
+  <div class="works__title">
+    <h2 class="heading-2">My <span>Work</span></h2>
+  </div>
+
+  <section class="works__projs">
+    <!-- Project 1 -->
+    <div class="works__proj">
+    <a href="#" class="works__item">
+        <img class="works__img" src="img/MOM_app.png" alt="MOM app" />
+        <div class="works__overlay">
+            <p>Mindful Ocean Metaverse (iOS app) ＠Outblaze</p>
+            <p>Web3 AR App Product Management</p>
         </div>
-    
-        <section class="works__projs">
-            <div class="works__proj proj1">
-                <a herf="#" class="works__item">
-                    <img class="works__img" src="img/quiz page.jpg" alt="web project 1">
-                    <span class="works__invisible-1">
-                        <p>Node.JS / Express.JS</p>
-                        <p>Mongoose ORM/ Roblox (Lua)</p>
-                    </span>
-                </a>
-                <a href="https://www.virtualschoolmaker.com/" target="_blank" class="btn-light"><i class="fa fa-eye" aria-hidden="true"></i> Project</a>
-            </div>
-            <div class="works__proj proj2">
-                <a herf="#" class="works__item">
-                    <img class="works__img" src="img/project2.png" alt="web project 2">
-                    <span class="works__invisible-2">
-                        <p>DeFi DApp with Redux</p>
-                        <p>Next.js/Redux/Web3.js/Mongoose</p>
-                    </span>
-                </a>
-                <a href="https://token-transfer-redux.vercel.app/" target="_blank" class="btn-light"><i class="fa fa-eye" aria-hidden="true"></i> Project</a>
-                <a href="https://github.com/susancat/DeFi_redux_version" target="_blank" class="btn-dark"><i class="fa fa-github" aria-hidden="true"> Github</i></a>
-            </div>
-            <div class="works__proj proj3">
-                <a herf="#" class="works__item">
-                    <img class="works__img" src="img/project3.png" alt="web project 3">
-                    <span class="works__invisible-3">
-                        <p>mindful Ocean: DApp</p>
-                        <p>web3: solidity/Remix/IPFS</p>
-                        <p>Frontend: Next.JS/Web3.js</p>
-                    </span>
-                </a>
-                <a href="https://mindful-token.vercel.app/" target="_blank" class="btn-light"><i class="fa fa-eye" aria-hidden="true"></i> Project</a>
-            </div>
-        </section>
-    </section>
+    </a>
+    <a href="https://apps.apple.com/us/app/mindful-ocean-metaverse/id6464570212?l=en-GB" target="_blank" class="btn-light">Project</a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="works__proj">
+    <a href="#" class="works__item">
+        <img class="works__img" src="img/AI_assistant.png" alt="L'AiR SaaS" />
+        <div class="works__overlay">
+          <p>L'AiR Space (VR/AI SaaS platform)</p>
+          <p>Product Management</p>
+        </div>
+    </a>
+    <a href="https://seeulair.com/space/ai-smart-guide-kiosk?lang=en" target="_blank" class="btn-light">Project</a>
+    <a href="https://github.com/susancat/lambda_AI_RAG_assistant" target="_blank" class="btn-dark">
+        <i class="fa fa-github"></i> GitHub
+    </a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="works__proj">
+    <a href="#" class="works__item">
+        <img class="works__img" src="img/cdh.png" alt="CDH" />
+        <div class="works__overlay">
+            <p>GameFi Support ＠Outblaze</p>
+            <p>Crazy Defense Heroes - web app dev & game data analytics</p>
+        </div>
+    </a>
+    <a href="https://dune.com/irenezh71/tower-spending" target="_blank" class="btn-light">Project</a>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="works__proj">
+    <a href="#" class="works__item">
+        <img class="works__img" src="img/AI_photo.jpeg" alt="Garmania AI" />
+        <div class="works__overlay">
+            <p>Garmania AI Booths</p>
+            <p>Garmania - AI Photo Booth & DJ Integration</p>
+        </div>
+    </a>
+    <a href="" class="btn-light">Project</a>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="works__proj">
+    <a href="#" class="works__item">
+        <img class="works__img" src="img/everrich.jpeg" alt="Everrich" />
+        <div class="works__overlay">
+            <p>Taiwan Intl Travel Expo - Everrich Real-time Lottery System</p>
+            <p>Project Management</p>
+        </div>
+    </a>
+    <a href="" class="btn-light">Project</a>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="works__proj">
+    <a href="#" class="works__item">
+        <img class="works__img" src="img/Sci-tech_customer.png" alt="Natinal Sci-tech meseum" />
+        <div class="works__overlay">
+            <p>National Kaohsiung Sci-Tech Museum - On-site service system</p>
+            <p>Project Management: Check-in KIOSK + Customer Service System + Line Official Account + two Interactive game</p>
+        </div>
+    </a>
+    <a href="" class="btn-light">Project</a>
+    </div>
+
+    <!-- Project 7 -->
+    <div class="works__proj">
+  <a href="#installations-details" class="works__item">
+    <img class="works__img" src="img/shopee.png" alt="Interactive Installations">
+    <div class="works__overlay">
+      <p>Interactive Installations</p>
+      <p>Congatec AR Puzzle App • 3M Training Center Interactive Games • Shopee Brand Summit Projection • Foxwell Projection • National Museum of Prehistory Interactive Game</p>
+    </div>
+  </a>
+  <a href="#installations-details" class="btn-light"><i class="fa fa-eye"></i> Details</a>
+</div>
+
+    <!-- Project 8 -->
+    <div class="works__proj">
+    <a href="#" class="works__item">
+        <img class="works__img" src="img/AI_RAG.jpeg" alt="MOM app" />
+        <div class="works__overlay">
+            <p>AWS Lambda AI RAG Assistant</p>
+            <p>Tech Project Management/Product Management</p>
+        </div>
+    </a>
+    <a href="https://github.com/susancat/lambda_AI_RAG_assistant" class="btn-light">Project</a>
+    </div>
+
+    <!-- Project 9 -->
+    <div class="works__proj">
+    <a href="#" class="works__item">
+        <img class="works__img" src="img/terraform.jpeg" alt="MOM app" />
+        <div class="works__overlay">
+            <p>Terraform Token Price Tracker</p>
+            <p>Tech Project Management/Product Management</p>
+        </div>
+    </a>
+    <a href="https://github.com/susancat/terraform_tokenprice_tracker" class="btn-light">Project</a>
+    </div>
+  </section>
+</section>
 
     <div class="contact" id="contactme">
         <div class="contact__title">
@@ -178,19 +279,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="contact__mobile box">
                 <h4 class="heading-4">
-                    <span>Address: </span>Taoyuan City (work remotely)
+                    <span>Address: </span>Taoyuan, Taiwan (work on-site or remotely)
                 </h4>
             </div>
             <div class="contact__free box">
                 <h4 class="heading-4">
-                    <span>Project Developer </span>@ Outblaze ltd at Cyberport, Hong Kong(family group member of web3 unicorn company Animoca Brands)
+                    <span>Tech PM/PO </span>AI | web3 | SaaS
                 </h4>
             </div>
         </div>
     </div>
 
     <footer class="footer">
-        &copy; 2023 Designed and developed by Jiayu Zhang. All rights reserved.
+        &copy; 2025 Designed and developed by Jiayu Zhang. All rights reserved.
     </footer>
 
     <!-- <div class="popup">
@@ -203,5 +304,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.bootcdn.net/ajax/libs/semantic-ui/2.4.1/components/accordion.js"></script> -->
     <script src="js/main.js"></script>
+
+
+<!-- Modal：合集詳情（可放在頁面底部，結束 body 前） -->
+<section id="installations-details" class="modal">
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="instTitle">
+    <a href="#mywork" class="modal__close" aria-label="Close">&times;</a>
+    <h3 id="instTitle" class="modal__title">Interactive Installations — Project Details</h3>
+
+    <div class="modal__tabs">
+      <a href="#tab-shopee"   class="modal__tab is-active" data-target="tab-shopee">Shopee Brand Summit Projection Wall</a>
+      <a href="#tab-foxwell"  class="modal__tab"           data-target="tab-foxwell">Foxwell Projection Wall - Energy Taiwan 2024</a>
+      <a href="#tab-nanke"    class="modal__tab"           data-target="tab-nanke">National Museum of Prehistory - Fire-making Game</a>
+      <a href="#tab-3M"       class="modal__tab"           data-target="tab-3M">3M Training Center- RFID + Dust Simulation</a>
+      <a href="#tab-congatec" class="modal__tab"           data-target="tab-congatec">Congatec AR Puzzle App</a>
+    </div>
+
+    <div class="modal__panels">
+      <div id="tab-shopee" class="modal__panel is-active">
+        <img src="img/shopee.png" alt="Shopee Projection Mapping" class="modal__img">
+        <ul class="modal__list">
+          <li>Projection mapping 整合，跨部門協作與現場校正</li>
+          <li>高並發場域動線規劃、KOL 與廠商協調</li>
+          <li>成果：品牌活動高參與度、即時互動回饋</li>
+        </ul>
+      </div>
+
+      <div id="tab-foxwell" class="modal__panel">
+        <img src="img/foxwell.jpeg" alt="Fooway Projection" class="modal__img">
+        <ul class="modal__list">
+          <li>投影牆內容與硬體同步控制、場景切換</li>
+          <li>客製內容工作流與素材交付標準化</li>
+          <li>成果：大型展會穩定運行、現場維運手冊</li>
+        </ul>
+      </div>
+
+      <div id="tab-nanke" class="modal__panel">
+        <img src="img/nanke.jpeg" alt="Nanke Kids Interactive Games" class="modal__img">
+        <ul class="modal__list">
+          <li>兒童互動遊戲（感測/觸控）＋ 教具式任務設計</li>
+          <li>多站點 Kiosk 佈署、資料蒐集與簡易報表</li>
+          <li>成果：常設展長期穩定，維護流程簡化</li>
+        </ul>
+      </div>
+
+      <div id="tab-3M" class="modal__panel">
+        <img src="img/3M_training.jpeg" alt="3M Training Center" class="modal__img">
+        <ul class="modal__list">
+          <li>RFID 與模擬裝置整合</li>
+          <li>訓練情境流程設計與現場部署</li>
+          <li>成果：內訓人員長期使用、維運流程標準化</li>
+        </ul>
+      </div>
+
+      <div id="tab-congatec" class="modal__panel">
+        <img src="img/congatec.jpeg" alt="Congatec AR Puzzle App" class="modal__img">
+        <ul class="modal__list">
+          <li>AR 拼圖互動設計</li>
+          <li>展示硬體與 App 邏輯串接</li>
+          <li>成果：展場互動體驗穩定、可重複使用</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 </body>
 </html>

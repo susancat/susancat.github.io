@@ -1,0 +1,66 @@
+/* ---- Modal 基礎 ---- */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  opacity: 0;
+  visibility: hidden;
+  transition: .25s ease;
+  z-index: 999;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__dialog {
+    position: relative;
+    width: min(920px, 92vw);
+    max-height: 86vh;
+    margin: 6vh auto 0;
+    background: #101114;
+    color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    overflow: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  }
+
+  &__close {
+    position: absolute;
+    top: .5rem; right: .75rem;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    opacity: .8;
+    &:hover { opacity: 1; }
+  }
+
+  &__title { font-size: 1.8rem; margin: 0 0 1rem; }
+
+  /* Tabs */
+  &__tabs { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1rem; }
+  &__tab {
+    padding:.5rem .9rem; border-radius:999px;
+    border:1px solid rgba(255,255,255,.2);
+    text-decoration:none; color:#fff; font-size:.95rem; opacity:.85;
+    &:hover { opacity:1; }
+  }
+
+  /* Panels：關鍵在這裡 */
+  &__panels { position:relative; }
+  &__panel { display:none; }                      /* 先全部隱藏 */
+  &:target &__panel.is-active { display:block; }  /* 只有 .is-active 顯示 */
+
+  &__img {
+    display:block;
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    border:2px solid rgba(255,255,255,.2);
+    border-radius:8px;
+    margin-bottom:1rem;
+  }
+
+  &__list { padding-left:1.2rem; li{ margin-bottom:.35rem; } }
+}

@@ -55,3 +55,9 @@ body {
         grid-template-rows: min-content repeat(3, minmax(100vh, max-content)) 95vh 5vh;
     }
 }
+
+$header-height: 72px !default; // 依你的實際 navbar 高度調整
+
+[id] {
+  scroll-margin-top: $header-height;
+}
