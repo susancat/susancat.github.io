@@ -615,6 +615,12 @@ body {
   opacity: 1;
   visibility: visible;
 }
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: block;
+}
 .modal__dialog {
   position: relative;
   width: min(920px, 92vw);
