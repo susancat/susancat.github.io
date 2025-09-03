@@ -46,3 +46,30 @@ document.addEventListener('keydown', (e) => {
     if (open) window.location.hash = '#mywork';
   }
 });
+
+// ===== Load modals from external partial =====
+document.documentElement.setAttribute('data-modals', 'loading');
+
+async function loadModals() {
+  try {
+    const root = document.getElementById('modals-root');
+    if (!root) return;
+    const res = await fetch('partials/modals.html', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('Failed to fetch modals.html');
+    const html = await res.text();
+    root.innerHTML = html;
+
+    // 若網址本來就帶著 #proj-xxx，載入後重觸發 :target
+    if (location.hash && root.querySelector(location.hash)) {
+      const h = location.hash;
+      location.hash = '';          // 清一下
+      location.hash = h;           // 再設定讓 :target 生效
+    }
+  } catch (e) {
+    console.error(e);
+  } finally {
+    document.documentElement.setAttribute('data-modals', 'ready');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadModals);
