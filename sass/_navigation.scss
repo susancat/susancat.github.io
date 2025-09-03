@@ -199,4 +199,40 @@
         // top: 0;
     }
 
+    // <--------language switch----------------->
+    &__lang {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    list-style: none; // 如果你把它放在 <li> 也不會出現圓點
+    }
+
+    &__lang-btn {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #d4d4d4;
+    background: #fff;
+    color: #333;
+    font: inherit;
+    font-weight: 600;
+    padding: .6rem 1.2rem;
+    border-radius: 999px; // 膠囊
+    cursor: pointer;
+    transition: all .2s ease;
+
+    &:hover {
+        background: #f2f2f2;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,.12);
+    }
+    &:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+    }
+
+    @media (max-width: 420px) {
+    .navigation__lang-btn { padding: .5rem .8rem; }
+    }
 }

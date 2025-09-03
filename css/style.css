@@ -54,6 +54,24 @@ body {
   scroll-margin-top: 72px;
 }
 
+/* 當前語系高亮（全站） */
+:root[data-lang=zh] .navigation__lang-btn[data-set-lang=zh],
+:root[data-lang=en] .navigation__lang-btn[data-set-lang=en] {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 文字顯示規則（全站） */
+:root[data-lang=zh] .i18n-en {
+  display: none !important;
+}
+
+:root[data-lang=en] .i18n-zh {
+  display: none !important;
+}
+
 .header {
   height: 100vh;
   grid-column: 1/-1;
@@ -506,6 +524,40 @@ body {
 }
 .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
   transform: rotate(-135deg);
+}
+.navigation__lang {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  list-style: none;
+}
+.navigation__lang-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #d4d4d4;
+  background: #fff;
+  color: #333;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.navigation__lang-btn:hover {
+  background: #f2f2f2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+.navigation__lang-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+@media (max-width: 420px) {
+  .navigation .navigation__lang-btn {
+    padding: 0.5rem 0.8rem;
+  }
 }
 
 .heading-4, .heading-3, .heading-2, .heading-1 {

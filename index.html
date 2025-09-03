@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -19,28 +19,6 @@
     <title>Irene pm&mdash;Portfolio</title>
 </head>
 
-<script>
-document.addEventListener('click', (e) => {
-  const tab = e.target.closest('.modal__tab');
-  if (!tab) return;
-
-  // 阻止 <a href="#tab-xxx"> 改變 URL hash，避免 :target 失效
-  e.preventDefault();
-
-  const modal = tab.closest('.modal');                 // 僅影響當前這個 modal
-  const targetId = tab.dataset.target;
-
-  // 切換 tab 樣式
-  modal.querySelectorAll('.modal__tab').forEach(t => t.classList.remove('is-active'));
-  tab.classList.add('is-active');
-
-  // 切換 panel 顯示
-  modal.querySelectorAll('.modal__panel').forEach(p => p.classList.remove('is-active'));
-  const targetPanel = modal.querySelector('#' + targetId);
-  if (targetPanel) targetPanel.classList.add('is-active');
-});
-</script>
-
 <body class=container><!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS8XN6HW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -59,10 +37,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </figure>
 
             <ul class="navigation__list">
-                <li class="navigation__item"><a href="#home" class="navigation__link"><span>01</span>Home</a></li>
-                <li class="navigation__item"><a href="#aboutme" class="navigation__link"><span>02</span>About me</a></li>
-                <li class="navigation__item"><a href="#mywork" class="navigation__link"><span>03</span>My work</a></li>
-                <li class="navigation__item"><a href="#contactme" class="navigation__link"><span>04</span>Contact me</a></li>
+                <li class="navigation__item">
+                  <a href="#home" class="navigation__link">
+                    <span class="i18n-zh" lang="zh-Hant">01 首頁</span>
+                    <span class="i18n-en" lang="en">01 Home</span>
+                  </a>
+                </li>
+                <li class="navigation__item">
+                  <a href="#aboutme" class="navigation__link">
+                    <span class="i18n-zh" lang="zh-Hant">02 自我介紹</span>
+                    <span class="i18n-en" lang="en">02 About me</span>
+                  </a>
+                </li>
+                <li class="navigation__item">
+                  <a href="#mywork" class="navigation__link">
+                    <span class="i18n-zh" lang="zh-Hant">03 我的專案</span>
+                    <span class="i18n-en" lang="en">03 My Work</span>
+                  </a>
+                </li>
+                <li class="navigation__item">
+                  <a href="#contactme" class="navigation__link">
+                    <span class="i18n-zh" lang="zh-Hant">04 請聯絡我</span>
+                    <span class="i18n-en" lang="en">04 Contact me</span>
+                  </a>
+                </li>
+                <!-- 語系切換 -->
+                <li class="navigation__lang" aria-label="Language switch">
+                  <button type="button" class="navigation__lang-btn" data-set-lang="zh">繁中</button>
+                  <button type="button" class="navigation__lang-btn" data-set-lang="en">EN</button>
+                </li>
             </ul>
         </nav>
     </div>

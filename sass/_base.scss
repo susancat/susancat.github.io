@@ -62,3 +62,16 @@ $header-height: 72px !default; // 依你的實際 navbar 高度調整
 [id] {
   scroll-margin-top: $header-height;
 }
+
+/* 當前語系高亮（全站） */
+:root[data-lang="zh"] .navigation__lang-btn[data-set-lang="zh"],
+:root[data-lang="en"] .navigation__lang-btn[data-set-lang="en"] {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  box-shadow: 0 8px 16px rgba(0,0,0,.20);
+}
+
+/* 文字顯示規則（全站） */
+:root[data-lang="zh"] .i18n-en { display: none !important; }
+:root[data-lang="en"] .i18n-zh { display: none !important; }
