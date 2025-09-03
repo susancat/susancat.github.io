@@ -5,7 +5,7 @@
   background: rgba(0,0,0,.75);
   opacity: 0;
   visibility: hidden;
-  transition: .25s ease;
+  transition: opacity .25s ease, visibility .25s ease;
   z-index: 999;
 
   &:target {
@@ -22,129 +22,227 @@
   
   &__dialog {
     position: relative;
-    width: min(920px, 92vw);
+    width: min(1040px, 92vw);
     max-height: 86vh;
     margin: 6vh auto 0;
     background: #101114;
     color: #fff;
-    border-radius: 12px;
-    padding: 2rem;
+    border-radius: 14px;
+    padding: 2.4rem;
     overflow: auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    box-shadow: 0 18px 40px rgba(0,0,0,.45);
+    font-size: 1.12rem;       /* ⬆️ 提升基準字級 */
+    line-height: 1.7;         /* ⬆️ 行距更舒適 */
+    transform: translateY(8px);
+    transition: transform .28s ease;
+
+    .modal:target & {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      padding: 2rem;
+      font-size: 1.08rem;     /* 手機再稍大一點 */
+      line-height: 1.76;
+    }
   }
 
   &__close {
     position: absolute;
-    top: .5rem; right: .75rem;
-    font-size: 2rem;
+    top: .6rem; 
+    right: .8rem;
+    font-size: 2.1rem;        /* ⬆️ 更好點擊 */
     color: #fff;
     text-decoration: none;
-    opacity: .8;
-    &:hover { opacity: 1; }
+    opacity: .85;
+    padding: .25rem .4rem;
+    border-radius: 8px;
+    transition: opacity .2s ease, background .2s ease;
+
+    &:hover { opacity: 1; background: rgba(255,255,255,.06); }
+    &:focus-visible { outline: 2px solid rgba(255,255,255,.35); outline-offset: 2px; }
   }
 
-  &__title { font-size: 1.8rem; margin: 0 0 1rem; }
+  &__title { 
+    font-size: 2.05rem;       /* ⬆️ 放大標題 */
+    font-weight: 700;
+    margin: 0 0 1.2rem; 
+    letter-spacing: .2px;
+
+    @media (max-width: 768px) {
+      font-size: 1.9rem;
+    }
+  }
 
   /* Tabs */
-  &__tabs { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1rem; }
-  &__tab {
-    padding:.5rem .9rem; border-radius:999px;
-    border:1px solid rgba(255,255,255,.2);
-    text-decoration:none; color:#fff; font-size:.95rem; opacity:.85;
-    &:hover { opacity:1; }
+  &__tabs { 
+    display:flex; 
+    flex-wrap:wrap; 
+    gap:.6rem; 
+    margin-bottom:1.1rem; 
   }
 
-  /* Panels：關鍵在這裡 */
+  &__tab {
+    padding:.6rem 1rem; 
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.22);
+    text-decoration:none; 
+    color:#fff; 
+    font-size:1rem;        /* ⬆️ 稍微放大 */
+    opacity:.9;
+    transition: all .2s ease;
+
+    &:hover { 
+      opacity:1; 
+      background: rgba(255,255,255,.06); 
+      transform: translateY(-1px);
+    }
+    &.is-active {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.35);
+    }
+  }
+
+  /* Panels */
   &__panels { position:relative; }
-  &__panel { display:none; }                      /* 先全部隱藏 */
-  &:target &__panel.is-active { display:block; }  /* 只有 .is-active 顯示 */
+  &__panel { display:none; }
+  &:target &__panel.is-active { display:block; }
 
   &__img {
     display:block;
     width:100%;
     aspect-ratio:16/9;
     object-fit:cover;
-    border:2px solid rgba(255,255,255,.2);
-    border-radius:8px;
-    margin-bottom:1rem;
+    border:2px solid rgba(255,255,255,.16);
+    border-radius:10px;
+    margin-bottom:1.2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
   }
 
-  &__list { padding-left:1.2rem; li{ margin-bottom:.35rem; } }
+  &__list { 
+    padding-left:1.2rem; 
+    li{ 
+      margin-bottom:.6rem;    /* ⬆️ 增加列表間距 */
+    } 
+  }
 
+  /* ---- Hero ---- */
   &__hero {
     img {
       width: 100%;
-      border-radius: 8px;
-      margin-bottom: .5rem;
+      border-radius: 10px;
+      margin-bottom: .65rem;  /* ⬆️ 微調距離 */
+      box-shadow: 0 8px 20px rgba(0,0,0,.35);
+      border:2px solid rgba(255,255,255,.12);
     }
     figcaption {
-      font-size: .85rem;
-      color: #777;
+      font-size: .95rem;      /* ⬆️ 說明字體 */
+      color: #b9bcc4;
       text-align: center;
     }
   }
 
+  /* ---- Grid ---- */
   &__grid {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.6rem;
     grid-template-columns: 1fr 1fr;
 
+    @media (max-width: 900px) {
+      gap: 1.4rem;
+    }
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
+      gap: 1.2rem;
     }
   }
 
+  /* ---- Section ---- */
   &__section {
-    margin: 1.5rem 0;
+    margin: 1.6rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,.08); /* ⬆️ 視覺分段 */
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
 
     h4 {
-      margin-bottom: .5rem;
-      font-weight: 600;
+      margin-bottom: .65rem;
+      font-weight: 700;
+      font-size: 1.15rem;     /* ⬆️ 小標加粗+放大 */
+      letter-spacing: .2px;
+      color: #e9eaf0;
+    }
+
+    p { 
+      color: #d6d7dc; 
     }
   }
 
-  /* Tags（向後相容：同時支援 .modal__tags 與 .tags） */
+  /* ---- Tags（向後相容 .modal__tags / .tags） ---- */
   &__tags, .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: .5rem;
+    gap: .55rem;
 
     li {
-      padding: .25rem .6rem;
+      padding: .35rem .7rem;  /* ⬆️ 增加可點面積 */
       background: #f0f0f0;
-      border-radius: .5rem;
-      font-size: .9rem;
+      border-radius: .6rem;
+      font-size: .98rem;      /* ⬆️ 放大 chip 文字 */
+      color: #222;
+      box-shadow: 0 1px 0 rgba(0,0,0,.05) inset;
     }
   }
 
-  /* KPI（向後相容：同時支援 .modal__kpis 與 .kpis） */
+  /* ---- KPI（向後相容 .modal__kpis / .kpis） ---- */
   &__kpis, .kpis {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
 
     strong {
-      font-size: 1.2rem;
-      margin-right: .3rem;
+      font-size: 1.24rem;     /* ⬆️ 放大重點數字 */
+      margin-right: .35rem;
+      color: #fff;
+    }
+
+    li {
+      color: #d6d7dc;
     }
   }
 
+  /* ---- Gallery ---- */
   &__gallery {
     display: grid;
-    gap: .75rem;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: .9rem;               /* ⬆️ 稍微拉開 */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 
     img {
       width: 100%;
-      border-radius: 6px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 6px 14px rgba(0,0,0,.3);
+    }
+
+    figcaption {
+      margin-top: .25rem;
+      font-size: .95rem;
+      color: #b9bcc4;
+      text-align: center;
     }
   }
 
+  /* ---- Video ---- */
   &__video {
     aspect-ratio: 16 / 9;
     background: #000;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,.4);
+    border: 1px solid rgba(255,255,255,.12);
 
     iframe {
       width: 100%;
@@ -153,13 +251,19 @@
     }
   }
 
+  /* ---- Links ---- */
   &__links {
     display: flex;
-    gap: .8rem;
+    gap: .9rem;
     margin-top: 1.2rem;
+
+    a {
+      font-size: 1rem;        /* ⬆️ 連結字級 */
+    }
   }
 }
 
+/* 載入遠端 partial 時的保護 */
 html[data-modals="loading"] .works__item {
   pointer-events: none;
   cursor: progress;
@@ -169,4 +273,11 @@ html[data-modals="ready"] .works__item {
   pointer-events: auto;
   cursor: pointer;
   opacity: 1;
+}
+
+/* 可選：開啟 modal 時鎖住頁面捲動（支援度視瀏覽器而定） */
+@supports selector(html:has(.modal:target)) {
+  html:has(.modal:target) {
+    overflow: hidden;
+  }
 }

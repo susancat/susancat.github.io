@@ -31,17 +31,139 @@
       <!-- JSON-LD 結構化資料 -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Irene Zhang",
-      "jobTitle": "Product Manager / Tech Project Manager",
-      "url": "https://susancat.github.io/",
-      "sameAs": [
-        "https://www.linkedin.com/in/irene-zhang-970701/",
-        "https://github.com/susancat"
-      ]
-    }
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://susancat.github.io/#person",
+        "name": "Irene Zhang",
+        "jobTitle": "Tech Project Manager / Product Manager",
+        "url": "https://susancat.github.io/",
+        "image": "hhttps://susancat.github.io/img/preview.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/irene-zhang-970701/",
+          "https://github.com/susancat"
+        ],
+        "knowsAbout": [
+          "Product Management", "Project Management", "Agile", "Scrum",
+          "AI", "RAG", "Web3", "AR/VR", "Data Analytics", "Serverless"
+        ],
+        "worksOn": [
+          { "@id": "https://susancat.github.io/#proj-mom-details" },
+          { "@id": "https://susancat.github.io/#proj-lair-details" },
+          { "@id": "https://susancat.github.io/#proj-cdh-details" },
+          { "@id": "https://susancat.github.io/#proj-garmania-details" },
+          { "@id": "https://susancat.github.io/#proj-everrich-details" },
+          { "@id": "https://susancat.github.io/#proj-nkstm-details" },
+          { "@id": "https://susancat.github.io/#installations-details" },
+          { "@id": "https://susancat.github.io/#proj-lambda-details" },
+          { "@id": "https://susancat.github.io/#proj-terraform-details" }
+        ]
+      },
+
+      {
+        "@type": "CreativeWork",
+        "@id": "https://susancat.github.io/#proj-mom-details",
+        "name": "Mindful Ocean Metaverse (iOS)",
+        "author": { "@id": "https://susancat.github.io/#person" },
+        "url": "https://susancat.github.io/#proj-mom-details",
+        "image": "https://susancat.github.io/img/MOM_app.png",
+        "inLanguage": ["en", "zh-Hant"],
+        "keywords": ["PM","PO","Product Manager","AI","AR","iOS","App","Web3"],
+        "description": "iOS app：Web3/AR 元素導入，產品管理與跨部門協作。"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://susancat.github.io/#proj-lair-details",
+        "name": "L'AiR Space — VR/AI SaaS Platform",
+        "author": { "@id": "https://susancat.github.io/#person" },
+        "url": "https://susancat.github.io/#proj-lair-details",
+        "image": "https://susancat.github.io/img/AI_assistant.png",
+        "inLanguage": ["en", "zh-Hant"],
+        "keywords": ["Tech PM","SaaS","AI","VR","RAG","Product Management"],
+        "description": "VR/AI SaaS 平台，導入 AI 助理、數據儀表板與金流整合。"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://susancat.github.io/#proj-cdh-details",
+        "name": "Crazy Defense Heroes — Web App & Game Data",
+        "author": { "@id": "https://susancat.github.io/#person" },
+        "url": "https://susancat.github.io/#proj-cdh-details",
+        "image": "https://susancat.github.io/img/cdh.png",
+        "inLanguage": ["en", "zh-Hant"],
+        "keywords": ["PM","Analytics","Dune","BigQuery","Web App","GameFi"],
+        "description": "鏈上/遊戲數據分析與 Web App，支援活動策略與玩家洞察。"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://susancat.github.io/#proj-garmania-details",
+        "name": "Garmania — AI Photo Booth & DJ Integration",
+        "author": { "@id": "https://susancat.github.io/#person" },
+        "url": "https://susancat.github.io/#proj-garmania-details",
+        "image": "https://susancat.github.io/img/AI_photo.jpeg",
+        "inLanguage": ["en", "zh-Hant"],
+        "keywords": ["Tech PM","AI","Event","Photo Booth","On-site Ops"],
+        "description": "現場 AI 生圖流程與硬體/音樂整合，規劃維運手冊。"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://susancat.github.io/#proj-everrich-details",
+        "name": "Everrich — Real-time Lottery System",
+        "author": { "@id": "https://susancat.github.io/#person" },
+        "url": "https://susancat.github.io/#proj-everrich-details",
+        "image": "https://susancat.github.io/img/everrich.jpeg",
+        "inLanguage": ["en", "zh-Hant"],
+        "keywords": ["Project Management","Event Tech","Real-time System"],
+        "description": "大型展會即時抽獎系統與人流動線規劃、異業協作。"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://susancat.github.io/#proj-nkstm-details",
+        "name": "National Kaohsiung Sci-Tech Museum — Service System",
+        "author": { "@id": "https://susancat.github.io/#person" },
+        "url": "https://susancat.github.io/#proj-nkstm-details",
+        "image": "https://susancat.github.io/img/Sci-tech_customer.png",
+        "inLanguage": ["en", "zh-Hant"],
+        "keywords": ["PM","Kiosk","Customer Service","LINE OA","Interactive"],
+        "description": "Check-in KIOSK、客服系統、LINE OA 與兩款互動遊戲的整合與維運。"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://susancat.github.io/#installations-details",
+        "name": "Interactive Installations (Collection)",
+        "author": { "@id": "https://susancat.github.io/#person" },
+        "url": "https://susancat.github.io/#installations-details",
+        "image": "https://susancat.github.io/img/shopee.png",
+        "inLanguage": ["en", "zh-Hant"],
+        "keywords": ["Projection","AR","RFID","Interactive","Museum"],
+        "description": "合輯：Shopee 投影、Foxwell 展牆、3M 訓練中心、Congatec AR、南科互動遊戲。"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://susancat.github.io/#proj-lambda-details",
+        "name": "AWS Lambda — AI RAG Assistant",
+        "author": { "@id": "https://susancat.github.io/#person" },
+        "url": "https://susancat.github.io/#proj-lambda-details",
+        "image": "https://susancat.github.io/img/AI_RAG.jpeg",
+        "inLanguage": ["en", "zh-Hant"],
+        "keywords": ["Serverless","Lambda","EventBridge","API Gateway","RAG","Vector DB"],
+        "description": "Serverless（Lambda/EventBridge/API GW）＋ 向量檢索；RAG pipeline、品質監控與 function calling。"
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://susancat.github.io/#proj-terraform-details",
+        "name": "Terraform — Token Price Tracker",
+        "author": { "@id": "https://susancat.github.io/#person" },
+        "url": "https://susancat.github.io/#proj-terraform-details",
+        "image": "https://susancat.github.io/img/terraform.jpeg",
+        "inLanguage": ["en", "zh-Hant"],
+        "keywords": ["IaC","Terraform","Automation","Monitoring"],
+        "description": "IaC 佈署的代幣價格追蹤與自動更新、告警與版本化管理。"
+      }
+     ]
+   }
     </script>
+
     <!--End SEO optimization -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">

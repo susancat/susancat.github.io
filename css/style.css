@@ -656,14 +656,18 @@ body {
   background: rgba(0, 0, 0, 0.75);
   opacity: 0;
   visibility: hidden;
-  transition: 0.25s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
   z-index: 999;
   /* Tabs */
-  /* Panels：關鍵在這裡 */
-  /* 先全部隱藏 */
-  /* 只有 .is-active 顯示 */
-  /* Tags（向後相容：同時支援 .modal__tags 與 .tags） */
-  /* KPI（向後相容：同時支援 .modal__kpis 與 .kpis） */
+  /* Panels */
+  /* ---- Hero ---- */
+  /* ---- Grid ---- */
+  /* ---- Section ---- */
+  /* ---- Tags（向後相容 .modal__tags / .tags） ---- */
+  /* ---- KPI（向後相容 .modal__kpis / .kpis） ---- */
+  /* ---- Gallery ---- */
+  /* ---- Video ---- */
+  /* ---- Links ---- */
 }
 .modal:target {
   opacity: 1;
@@ -677,49 +681,85 @@ body {
 }
 .modal__dialog {
   position: relative;
-  width: min(920px, 92vw);
+  width: min(1040px, 92vw);
   max-height: 86vh;
   margin: 6vh auto 0;
   background: #101114;
   color: #fff;
-  border-radius: 12px;
-  padding: 2rem;
+  border-radius: 14px;
+  padding: 2.4rem;
   overflow: auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  font-size: 1.12rem; /* ⬆️ 提升基準字級 */
+  line-height: 1.7; /* ⬆️ 行距更舒適 */
+  transform: translateY(8px);
+  transition: transform 0.28s ease;
+}
+.modal:target .modal__dialog {
+  transform: translateY(0);
+}
+@media (max-width: 768px) {
+  .modal__dialog {
+    padding: 2rem;
+    font-size: 1.08rem; /* 手機再稍大一點 */
+    line-height: 1.76;
+  }
 }
 .modal__close {
   position: absolute;
-  top: 0.5rem;
-  right: 0.75rem;
-  font-size: 2rem;
+  top: 0.6rem;
+  right: 0.8rem;
+  font-size: 2.1rem; /* ⬆️ 更好點擊 */
   color: #fff;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.85;
+  padding: 0.25rem 0.4rem;
+  border-radius: 8px;
+  transition: opacity 0.2s ease, background 0.2s ease;
 }
 .modal__close:hover {
   opacity: 1;
+  background: rgba(255, 255, 255, 0.06);
+}
+.modal__close:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.35);
+  outline-offset: 2px;
 }
 .modal__title {
-  font-size: 1.8rem;
-  margin: 0 0 1rem;
+  font-size: 2.05rem; /* ⬆️ 放大標題 */
+  font-weight: 700;
+  margin: 0 0 1.2rem;
+  letter-spacing: 0.2px;
+}
+@media (max-width: 768px) {
+  .modal__title {
+    font-size: 1.9rem;
+  }
 }
 .modal__tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
 }
 .modal__tab {
-  padding: 0.5rem 0.9rem;
+  padding: 0.6rem 1rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   text-decoration: none;
   color: #fff;
-  font-size: 0.95rem;
-  opacity: 0.85;
+  font-size: 1rem; /* ⬆️ 稍微放大 */
+  opacity: 0.9;
+  transition: all 0.2s ease;
 }
 .modal__tab:hover {
   opacity: 1;
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+.modal__tab.is-active {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 .modal__panels {
   position: relative;
@@ -735,53 +775,76 @@ body {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 .modal__list {
   padding-left: 1.2rem;
 }
 .modal__list li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.6rem; /* ⬆️ 增加列表間距 */
 }
 .modal__hero img {
   width: 100%;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  margin-bottom: 0.65rem; /* ⬆️ 微調距離 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.12);
 }
 .modal__hero figcaption {
-  font-size: 0.85rem;
-  color: #777;
+  font-size: 0.95rem; /* ⬆️ 說明字體 */
+  color: #b9bcc4;
   text-align: center;
 }
 .modal__grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.6rem;
   grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 900px) {
+  .modal__grid {
+    gap: 1.4rem;
+  }
 }
 @media (max-width: 768px) {
   .modal__grid {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 }
 .modal__section {
-  margin: 1.5rem 0;
+  margin: 1.6rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* ⬆️ 視覺分段 */
+}
+.modal__section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 .modal__section h4 {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  margin-bottom: 0.65rem;
+  font-weight: 700;
+  font-size: 1.15rem; /* ⬆️ 小標加粗+放大 */
+  letter-spacing: 0.2px;
+  color: #e9eaf0;
+}
+.modal__section p {
+  color: #d6d7dc;
 }
 .modal__tags, .modal .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 .modal__tags li, .modal .tags li {
-  padding: 0.25rem 0.6rem;
+  padding: 0.35rem 0.7rem; /* ⬆️ 增加可點面積 */
   background: #f0f0f0;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
+  border-radius: 0.6rem;
+  font-size: 0.98rem; /* ⬆️ 放大 chip 文字 */
+  color: #222;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) inset;
 }
 .modal__kpis, .modal .kpis {
   display: flex;
@@ -789,23 +852,37 @@ body {
   flex-wrap: wrap;
 }
 .modal__kpis strong, .modal .kpis strong {
-  font-size: 1.2rem;
-  margin-right: 0.3rem;
+  font-size: 1.24rem; /* ⬆️ 放大重點數字 */
+  margin-right: 0.35rem;
+  color: #fff;
+}
+.modal__kpis li, .modal .kpis li {
+  color: #d6d7dc;
 }
 .modal__gallery {
   display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.9rem; /* ⬆️ 稍微拉開 */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 .modal__gallery img {
   width: 100%;
-  border-radius: 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+.modal__gallery figcaption {
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  color: #b9bcc4;
+  text-align: center;
 }
 .modal__video {
   aspect-ratio: 16/9;
   background: #000;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 .modal__video iframe {
   width: 100%;
@@ -814,10 +891,14 @@ body {
 }
 .modal__links {
   display: flex;
-  gap: 0.8rem;
+  gap: 0.9rem;
   margin-top: 1.2rem;
 }
+.modal__links a {
+  font-size: 1rem; /* ⬆️ 連結字級 */
+}
 
+/* 載入遠端 partial 時的保護 */
 html[data-modals=loading] .works__item {
   pointer-events: none;
   cursor: progress;
@@ -830,6 +911,12 @@ html[data-modals=ready] .works__item {
   opacity: 1;
 }
 
+/* 可選：開啟 modal 時鎖住頁面捲動（支援度視瀏覽器而定） */
+@supports selector(html:has(.modal:target)) {
+  html:has(.modal:target) {
+    overflow: hidden;
+  }
+}
 #mywork {
   min-height: 100dvh;
   height: auto;

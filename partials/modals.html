@@ -1,100 +1,527 @@
 <!-- ========== Modals ========== -->
- <!-- Project 1: MOM -->
+<!-- Project 1: Mindful Ocean Metaverse (模板化＋雙語) -->
 <section id="proj-mom-details" class="modal">
-  <!-- 背景，可點擊關閉 -->
   <a href="#mywork" class="modal__backdrop" aria-hidden="true"></a>
-
-  <!-- 對話框 -->
   <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="momTitle">
     <a href="#mywork" class="modal__close" aria-label="Close">&times;</a>
-    <h3 id="momTitle" class="modal__title">Mindful Ocean Metaverse</h3>
-    <img src="img/MOM_app.png" alt="MOM web3 AR app" class="modal__img" />
-    <ul class="modal__list">
-      <li>iOS app product ownership (TestFlight, App Store Connect)</li>
-      <li>Web3 AR feature integration (Posemesh, ConjureKit)</li>
-      <li>Coordination with NGOs for ocean conservation campaigns</li>
-    </ul>
+
+    <!-- 標題 -->
+    <h3 id="momTitle" class="modal__title">
+      <span class="i18n-zh" lang="zh-Hant">Mindful Ocean Metaverse（iOS App）</span>
+      <span class="i18n-en" lang="en">Mindful Ocean Metaverse (iOS App)</span>
+    </h3>
+
+    <!-- Hero 圖 -->
+    <figure class="modal__hero">
+      <img src="img/MOM_app.png" alt="Mindful Ocean Metaverse — web3 AR iOS app" loading="lazy">
+      <figcaption class="caption i18n-zh" lang="zh-Hant">Web3 + AR 海洋保育主題 App（產品負責：TestFlight / App Store Connect）</figcaption>
+      <figcaption class="caption i18n-en" lang="en">Web3 + AR app for ocean conservation (Product ownership: TestFlight / App Store Connect)</figcaption>
+    </figure>
+
+    <!-- 概述 -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">概述</span><span class="i18n-en" lang="en">Overview</span></h4>
+      <p class="i18n-zh" lang="zh-Hant">
+        以海洋保育為題的 iOS 應用，整合 Web3 與 AR 技術。負責產品規劃與上架流程，並與 NGO 合作推動議題。
+      </p>
+      <p class="i18n-en" lang="en">
+        An iOS application combining Web3 and AR around ocean conservation. Led product planning and release, partnering with NGOs to drive impact.
+      </p>
+    </section>
+
+    <!-- 兩欄：我的角色 / 技術棧 -->
+    <div class="modal__grid">
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">我的角色</span><span class="i18n-en" lang="en">My Role</span></h4>
+        <ul>
+          <li class="i18n-zh" lang="zh-Hant">產品負責：TestFlight 測試、App Store Connect 上架</li>
+          <li class="i18n-en" lang="en">Product ownership: TestFlight, App Store Connect</li>
+          <li class="i18n-zh" lang="zh-Hant">Web3 / AR 功能整合（Posemesh、ConjureKit）</li>
+          <li class="i18n-en" lang="en">Integrated Web3 / AR features (Posemesh, ConjureKit)</li>
+          <li class="i18n-zh" lang="zh-Hant">與 NGO 協作，設計活動與內容營運流程</li>
+          <li class="i18n-en" lang="en">Coordinated with NGOs; designed campaigns and ops workflow</li>
+        </ul>
+      </section>
+
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">技術棧</span><span class="i18n-en" lang="en">Tech Stack</span></h4>
+        <ul class="modal__tags">
+          <li>iOS</li><li>AR</li><li>Web3</li><li>Posemesh</li><li>ConjureKit</li><li>Product Management</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- 成果/KPI（如有實際數據可替換） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">成果</span><span class="i18n-en" lang="en">Outcomes</span></h4>
+      <ul class="modal__kpis">
+        <li><strong class="i18n-zh" lang="zh-Hant">上架流程建立</strong><span class="i18n-zh">（審核與版本節奏）</span><span class="i18n-en">Release cadence & App Review workflow</span></li>
+        <li><strong>AR/Web3</strong> <span class="i18n-en">feature integration playbook</span><span class="i18n-zh">整合作業手冊</span></li>
+      </ul>
+    </section>
+
+    <!-- UI / Wireframes（放你的實際檔案；沒有可先留空） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">介面與線框</span><span class="i18n-en" lang="en">UI & Wireframes</span></h4>
+      <div class="modal__gallery">
+        <figure><img src="img/ui_mom_1.png" alt="MOM UI Screen" loading="lazy"><figcaption>MOM UI</figcaption></figure>
+        <figure><img src="img/wire_mom_1.png" alt="MOM Wireframe" loading="lazy"><figcaption>Wireframe</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 影片（若有 YouTube 替換 VIDEO_ID；沒有可刪此區） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">影片示範</span><span class="i18n-en" lang="en">Demo Video</span></h4>
+      <div class="modal__video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Mindful Ocean Metaverse Demo" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- 連結 -->
+    <div class="modal__links">
+      <a class="btn-light" href="https://apps.apple.com/us/app/mindful-ocean-metaverse/id6464570212?l=en-GB" target="_blank" rel="noopener">App Store →</a>
+      <!-- 若有官網或文件可補：<a class="btn-dark" href="https://example.com" target="_blank" rel="noopener">Website →</a> -->
+    </div>
   </div>
 </section>
 
-<!-- Project 2: L'AiR -->
+<!-- Project 2: L'AiR Space — VR/AI SaaS Platform (模板化＋雙語) -->
 <section id="proj-lair-details" class="modal">
   <a href="#mywork" class="modal__backdrop" aria-hidden="true"></a>
   <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="lairTitle">
     <a href="#mywork" class="modal__close" aria-label="Close">&times;</a>
-    <h3 id="lairTitle" class="modal__title">L'AiR Space — VR/AI SaaS Platform</h3>
-    <img src="img/AI_assistant.png" alt="L'AiR SaaS AI VR platform" class="modal__img">
-    <ul class="modal__list">
-      <li>AI Assistant（RAG 优化）、多語介面、金流整合（PayPal/NewebPay）</li>
-      <li>Dashboard：使用統計、品質回饋、FAQ 循環迭代</li>
-      <li>角色：Product Management（PRD、分工、驗收）</li>
-    </ul>
-    <a href="https://seeulair.com/space/ai-smart-guide-kiosk?lang=en" target="_blank" class="modal__link">View live →</a>
+
+    <!-- 標題 -->
+    <h3 id="lairTitle" class="modal__title">
+      <span class="i18n-zh" lang="zh-Hant">L’AiR Space — VR/AI SaaS 平台</span>
+      <span class="i18n-en" lang="en">L’AiR Space — VR/AI SaaS Platform</span>
+    </h3>
+
+    <!-- Hero 圖 -->
+    <figure class="modal__hero">
+      <img src="img/AI_assistant.png" alt="L'AiR SaaS AI VR platform" loading="lazy">
+      <figcaption class="caption i18n-zh" lang="zh-Hant">AI 助理（流程/介面/RAG 優化）、金流整合（PayPal / NewebPay）</figcaption>
+      <figcaption class="caption i18n-en" lang="en">AI Assistant (flows/UI/RAG optimization) with payments (PayPal / NewebPay)</figcaption>
+    </figure>
+
+    <!-- 概述 -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">概述</span><span class="i18n-en" lang="en">Overview</span></h4>
+      <p class="i18n-zh" lang="zh-Hant">
+        針對 VR/AI 場景打造的 SaaS 平台：規劃 AI 助理的操作流程與 UI，導入 RAG 優化；同時整合金流（PayPal／NewebPay）與儀表板，支援使用統計、品質回饋與 FAQ 迭代。
+      </p>
+      <p class="i18n-en" lang="en">
+        A VR/AI-oriented SaaS: designed the AI assistant’s flows and UI with RAG optimization, integrated payments (PayPal/NewebPay), and shipped dashboards for usage analytics, quality feedback, and FAQ iteration.
+      </p>
+    </section>
+
+    <!-- 兩欄：我的角色 / 技術棧 -->
+    <div class="modal__grid">
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">我的角色</span><span class="i18n-en" lang="en">My Role</span></h4>
+        <ul>
+          <li class="i18n-zh" lang="zh-Hant">產品管理：PRD、分工協作、驗收與版本節奏</li>
+          <li class="i18n-en" lang="en">Product Management: PRD, team orchestration, acceptance & release cadence</li>
+          <li class="i18n-zh" lang="zh-Hant">AI 助理流程／UI 設計與 RAG 品質優化</li>
+        <li class="i18n-en" lang="en">AI assistant flows/UI and RAG quality tuning</li>
+          <li class="i18n-zh" lang="zh-Hant">金流與 Dashboard 需求定義與落地</li>
+          <li class="i18n-en" lang="en">Defined & delivered payments and dashboards</li>
+        </ul>
+      </section>
+
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">技術棧</span><span class="i18n-en" lang="en">Tech Stack</span></h4>
+        <ul class="modal__tags">
+          <li>AI Assistant</li><li>RAG</li><li>Payments (PayPal/NewebPay)</li>
+          <li>Dashboard</li><li>SaaS</li><li>Product Management</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- 成果（如有數據可替換） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">成果</span><span class="i18n-en" lang="en">Outcomes</span></h4>
+      <ul class="modal__kpis">
+        <li><strong class="i18n-zh" lang="zh-Hant">流程標準化</strong><span class="i18n-zh">（FAQ 與回饋循環）</span><span class="i18n-en">Standardized flow with FAQ/feedback loop</span></li>
+        <li><strong>Payments</strong> <span class="i18n-en">seamless checkout</span><span class="i18n-zh">順暢結帳體驗</span></li>
+      </ul>
+    </section>
+
+    <!-- UI / Wireframes（替換為你的實檔；沒有可先留空或刪除） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">介面與線框</span><span class="i18n-en" lang="en">UI & Wireframes</span></h4>
+      <div class="modal__gallery">
+        <figure><img src="img/ui_lair_1.png" alt="L'AiR UI screen" loading="lazy"><figcaption>L’AiR UI</figcaption></figure>
+        <figure><img src="img/wire_lair_1.png" alt="L'AiR wireframe" loading="lazy"><figcaption>Wireframe</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 影片（若有 YouTube 替換 VIDEO_ID；沒有可刪除本區） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">影片示範</span><span class="i18n-en" lang="en">Demo Video</span></h4>
+      <div class="modal__video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="L'AiR Demo" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- 連結 -->
+    <div class="modal__links">
+      <a class="btn-light" href="https://seeulair.com/space/ai-smart-guide-kiosk?lang=en" target="_blank" rel="noopener">View live →</a>
+      <!-- 若你有公開 repo 再補：<a class="btn-dark" href="https://github.com/..." target="_blank" rel="noopener">GitHub →</a> -->
+    </div>
   </div>
 </section>
 
-<!-- Project 3: CDH -->
+<!-- Project 3: Crazy Defense Heroes — Game Data & Web App (模板化＋雙語) -->
 <section id="proj-cdh-details" class="modal">
   <a href="#mywork" class="modal__backdrop" aria-hidden="true"></a>
   <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="cdhTitle">
     <a href="#mywork" class="modal__close" aria-label="Close">&times;</a>
-    <h3 id="cdhTitle" class="modal__title">Crazy Defense Heroes — Game Data & Web App</h3>
-    <img src="img/cdh.png" alt="CDH token NFT gamefi web3" class="modal__img">
-    <ul class="modal__list">
-      <li>Dune/BigQuery 鏈上數據分析，Discord Bot 報表</li>
-      <li>玩家行為與代幣經濟洞察，活動策略優化</li>
-      <li>角色：Web app dev + Analytics</li>
-    </ul>
-    <a href="https://dune.com/irenezh71/tower-spending" target="_blank" class="modal__link">View dashboard →</a>
+
+    <!-- 標題 -->
+    <h3 id="cdhTitle" class="modal__title">
+      <span class="i18n-zh" lang="zh-Hant">Crazy Defense Heroes — 遊戲數據與 Web App</span>
+      <span class="i18n-en" lang="en">Crazy Defense Heroes — Game Data & Web App</span>
+    </h3>
+
+    <!-- Hero 圖 -->
+    <figure class="modal__hero">
+      <img src="img/cdh.png" alt="Crazy Defense Heroes data analytics & web app" loading="lazy">
+      <figcaption class="caption i18n-zh" lang="zh-Hant">Dune / BigQuery 數據分析，Discord Bot 報表</figcaption>
+      <figcaption class="caption i18n-en" lang="en">Dune / BigQuery analytics with Discord bot reporting</figcaption>
+    </figure>
+
+    <!-- 概述 -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">概述</span><span class="i18n-en" lang="en">Overview</span></h4>
+      <p class="i18n-zh" lang="zh-Hant">
+        針對 Crazy Defense Heroes 社群與營運，建立鏈上／鏈下數據分析與 Web App。
+        整合 Dune 與 BigQuery，並以 Discord Bot 推送關鍵報表，支援活動策略與代幣經濟決策。
+      </p>
+      <p class="i18n-en" lang="en">
+        Built on-chain/off-chain analytics and a web app for the Crazy Defense Heroes community and ops.
+        Integrated Dune and BigQuery; automated key reports via a Discord bot to support event strategy and tokenomics decisions.
+      </p>
+    </section>
+
+    <!-- 兩欄：我的角色 / 技術棧 -->
+    <div class="modal__grid">
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">我的角色</span><span class="i18n-en" lang="en">My Role</span></h4>
+        <ul>
+          <li class="i18n-zh" lang="zh-Hant">Web App 開發與資料管線設計</li>
+          <li class="i18n-en" lang="en">Web app development & data pipeline design</li>
+          <li class="i18n-zh" lang="zh-Hant">Dune / BigQuery 模型與查詢優化</li>
+          <li class="i18n-en" lang="en">Dune / BigQuery modeling & query optimization</li>
+          <li class="i18n-zh" lang="zh-Hant">Discord Bot 報表與告警</li>
+          <li class="i18n-en" lang="en">Discord bot reporting & alerts</li>
+        </ul>
+      </section>
+
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">技術棧</span><span class="i18n-en" lang="en">Tech Stack</span></h4>
+        <ul class="modal__tags">
+          <li>Dune</li><li>Google BigQuery</li><li>SQL</li>
+          <li>Discord Bot</li><li>Web App</li><li>Analytics</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- 成果（如有數據可替換） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">成果</span><span class="i18n-en" lang="en">Outcomes</span></h4>
+      <ul class="modal__kpis">
+        <li><strong class="i18n-zh" lang="zh-Hant">活動策略優化</strong><span class="i18n-zh">（依玩家行為與代幣經濟）</span><span class="i18n-en">Event strategy refined by player behavior & tokenomics</span></li>
+        <li><strong>Automation</strong> <span class="i18n-en">scheduled dashboards & alerts</span><span class="i18n-zh">排程儀表板與告警</span></li>
+      </ul>
+    </section>
+
+    <!-- UI / Wireframes（如無可留空或刪除） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">介面與線框</span><span class="i18n-en" lang="en">UI & Wireframes</span></h4>
+      <div class="modal__gallery">
+        <figure><img src="img/ui_cdh_1.png" alt="CDH dashboard UI" loading="lazy"><figcaption>Dashboard UI</figcaption></figure>
+        <figure><img src="img/wire_cdh_1.png" alt="CDH wireframe" loading="lazy"><figcaption>Wireframe</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 影片（若有 YouTube 替換 VIDEO_ID；沒有可刪） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">影片示範</span><span class="i18n-en" lang="en">Demo Video</span></h4>
+      <div class="modal__video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="CDH Analytics Demo" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- 連結 -->
+    <div class="modal__links">
+      <a class="btn-light" href="https://dune.com/irenezh71/tower-spending" target="_blank" rel="noopener">View dashboard →</a>
+      <!-- 若有 web app 或 repo 可再補：<a class="btn-dark" href="https://github.com/..." target="_blank" rel="noopener">GitHub →</a> -->
+    </div>
   </div>
 </section>
 
-<!-- Project 4: Garmania -->
+<!-- Project 4: Garmania — AI Photo Booth & DJ Integration (模板化＋雙語) -->
 <section id="proj-garmania-details" class="modal">
   <a href="#mywork" class="modal__backdrop" aria-hidden="true"></a>
   <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="garTitle">
     <a href="#mywork" class="modal__close" aria-label="Close">&times;</a>
-    <h3 id="garTitle" class="modal__title">Garmania — AI Photo Booth & DJ Integration</h3>
-    <img src="img/AI_photo.jpeg" alt="Garmania AI" class="modal__img">
-    <ul class="modal__list">
-      <li>現場 AI 生圖流程與素材工作流設計</li>
-      <li>DJ/硬體/網路環境整合與維運手冊</li>
-      <li>角色：PM（從 0 到 1 落地與現場運維）</li>
-    </ul>
+
+    <!-- 標題 -->
+    <h3 id="garTitle" class="modal__title">
+      <span class="i18n-zh" lang="zh-Hant">Garmania — AI 攝影亭與 DJ 系統整合</span>
+      <span class="i18n-en" lang="en">Garmania — AI Photo Booth & DJ Integration</span>
+    </h3>
+
+    <!-- Hero 圖 -->
+    <figure class="modal__hero">
+      <img src="img/AI_photo.jpeg" alt="Garmania AI Photo Booth & DJ Integration" loading="lazy">
+      <figcaption class="caption i18n-zh" lang="zh-Hant">AI 生圖、推歌流程與素材工作流；現場硬體／網路整合</figcaption>
+      <figcaption class="caption i18n-en" lang="en">AI image generation, song queue workflow; on-site HW/Network integration</figcaption>
+    </figure>
+
+    <!-- 概述 -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">概述</span><span class="i18n-en" lang="en">Overview</span></h4>
+      <p class="i18n-zh" lang="zh-Hant">
+        為品牌活動打造 AI 攝影亭體驗，設計從拍照到生圖、到推歌與分享的全流程，並整合場館網路、DJ 控台與後台服務。
+        產出維運手冊，確保從 0 到 1 的可複製與穩定運行。
+      </p>
+      <p class="i18n-en" lang="en">
+        Built an AI photo booth experience for live events—designing the flow from capture to image generation, song queueing and sharing—while integrating venue networking, DJ console and backend services. Delivered an operations playbook for reliable 0→1 rollout.
+      </p>
+    </section>
+
+    <!-- 兩欄：我的角色 / 技術棧 -->
+    <div class="modal__grid">
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">我的角色</span><span class="i18n-en" lang="en">My Role</span></h4>
+        <ul>
+          <li class="i18n-zh" lang="zh-Hant">PM：需求梳理、體驗流程設計、現場排程與風險預案</li>
+          <li class="i18n-en" lang="en">PM: requirements, experience flows, on-site runbook & risk plans</li>
+          <li class="i18n-zh" lang="zh-Hant">整合程式 / API / 硬體 / 網路，跨廠商協作</li>
+          <li class="i18n-en" lang="en">Orchestrated code/API/hardware/network; multi-vendor coordination</li>
+          <li class="i18n-zh" lang="zh-Hant">撰寫維運手冊（異常情境、SOP、快速回復）</li>
+          <li class="i18n-en" lang="en">Produced ops playbook (incident scenarios, SOP, quick recovery)</li>
+        </ul>
+      </section>
+
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">技術棧</span><span class="i18n-en" lang="en">Tech Stack</span></h4>
+        <ul class="modal__tags">
+          <li>AI Image Gen</li><li>API Integration</li><li>On-site Ops</li>
+          <li>Networking</li><li>Event Tech</li><li>PM</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- 成果 -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">成果</span><span class="i18n-en" lang="en">Outcomes</span></h4>
+      <ul class="modal__kpis">
+        <li><strong class="i18n-zh" lang="zh-Hant">穩定運行</strong><span class="i18n-zh">（高峰期排隊流量控制）</span><span class="i18n-en">Stable ops with peak-queue control</span></li>
+        <li><strong>Playbook</strong> <span class="i18n-en">reusable, scalable booth setup</span><span class="i18n-zh">可複製的布署方案</span></li>
+      </ul>
+    </section>
+
+    <!-- UI / Wireframes（替換成你的實圖；沒有可刪） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">介面與線框</span><span class="i18n-en" lang="en">UI & Wireframes</span></h4>
+      <div class="modal__gallery">
+        <figure><img src="img/ui_garmania_1.png" alt="Booth UI screen" loading="lazy"><figcaption>Booth UI</figcaption></figure>
+        <figure><img src="img/wire_garmania_1.png" alt="Booth wireframe" loading="lazy"><figcaption>Wireframe</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 影片（如有示範影片就替換 VIDEO_ID；沒有可刪除本區） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">影片示範</span><span class="i18n-en" lang="en">Demo Video</span></h4>
+      <div class="modal__video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Garmania AI Booth Demo" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- 連結（若有活動頁或媒體報導可補上） -->
+    <div class="modal__links">
+      <!-- <a class="btn-light" href="https://example.com/event" target="_blank" rel="noopener">Event page →</a> -->
+      <!-- <a class="btn-dark"  href="https://github.com/..." target="_blank" rel="noopener">GitHub →</a> -->
+    </div>
   </div>
 </section>
 
-<!-- Project 5: Everrich -->
+<!-- Project 5: Taiwan Intl Travel Expo — Everrich Lottery System (模板化＋雙語) -->
 <section id="proj-everrich-details" class="modal">
   <a href="#mywork" class="modal__backdrop" aria-hidden="true"></a>
   <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="everTitle">
     <a href="#mywork" class="modal__close" aria-label="Close">&times;</a>
-    <h3 id="everTitle" class="modal__title">Taiwan Intl Travel Expo — Everrich Lottery System</h3>
-    <img src="img/everrich.jpeg" alt="Everrich lottery interactive game" class="modal__img">
-    <ul class="modal__list">
-      <li>實時抽獎系統、動線與高峰人流處理</li>
-      <li>與品牌/活動方/硬體商協作與驗收</li>
-      <li>角色：Project Management</li>
-    </ul>
+
+    <!-- 標題 -->
+    <h3 id="everTitle" class="modal__title">
+      <span class="i18n-zh" lang="zh-Hant">台灣國際旅展 — Everrich 即時抽獎系統</span>
+      <span class="i18n-en" lang="en">Taiwan Intl Travel Expo — Everrich Lottery System</span>
+    </h3>
+
+    <!-- Hero 圖 -->
+    <figure class="modal__hero">
+      <img src="img/everrich.jpeg" alt="Everrich real-time lottery system" loading="lazy">
+      <figcaption class="caption i18n-zh" lang="zh-Hant">即時抽獎邏輯設計、測試與現場驗收</figcaption>
+      <figcaption class="caption i18n-en" lang="en">Real-time lottery logic, testing & on-site acceptance</figcaption>
+    </figure>
+
+    <!-- 概述 -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">概述</span><span class="i18n-en" lang="en">Overview</span></h4>
+      <p class="i18n-zh" lang="zh-Hant">
+        在台灣國際旅展活動中，負責 Everrich 抽獎系統專案管理。設計抽獎邏輯與流程，帶領團隊進行測試與除錯，並跨品牌、活動方與硬體廠商完成協作與驗收。
+      </p>
+      <p class="i18n-en" lang="en">
+        At the Taiwan Intl Travel Expo, managed the Everrich real-time lottery system project. Designed lottery logic and flow, led testing/debugging, and coordinated across brand, event organizers, and hardware vendors for acceptance.
+      </p>
+    </section>
+
+    <!-- 兩欄：我的角色 / 技術棧 -->
+    <div class="modal__grid">
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">我的角色</span><span class="i18n-en" lang="en">My Role</span></h4>
+        <ul>
+          <li class="i18n-zh" lang="zh-Hant">專案管理：需求梳理、進度追蹤、現場驗收</li>
+          <li class="i18n-en" lang="en">Project Management: requirements, tracking, on-site acceptance</li>
+          <li class="i18n-zh" lang="zh-Hant">設計抽獎邏輯與流程；測試、debug</li>
+          <li class="i18n-en" lang="en">Designed lottery logic & flow; led testing/debug</li>
+          <li class="i18n-zh" lang="zh-Hant">協調品牌、活動方與硬體商</li>
+          <li class="i18n-en" lang="en">Coordinated brand, event, and hardware vendors</li>
+        </ul>
+      </section>
+
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">技術棧</span><span class="i18n-en" lang="en">Tech Stack</span></h4>
+        <ul class="modal__tags">
+          <li>Lottery Logic</li><li>Real-time System</li><li>Project Management</li>
+          <li>Testing & Debug</li><li>Event Tech</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- 成果 -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">成果</span><span class="i18n-en" lang="en">Outcomes</span></h4>
+      <ul class="modal__kpis">
+        <li><strong class="i18n-zh" lang="zh-Hant">高參與度</strong><span class="i18n-zh">（即時互動抽獎體驗）</span><span class="i18n-en">High engagement via real-time lottery</span></li>
+        <li><strong class="i18n-zh" lang="zh-Hant">跨部門協作</strong><span class="i18n-zh">（品牌、活動方、硬體商協同）</span><span class="i18n-en">Cross-team delivery across brand/event/vendor</span></li>
+      </ul>
+    </section>
+
+    <!-- UI / Wireframes（如有可替換；沒有就刪） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">介面與線框</span><span class="i18n-en" lang="en">UI & Wireframes</span></h4>
+      <div class="modal__gallery">
+        <figure><img src="img/ui_everrich_1.png" alt="Everrich lottery UI" loading="lazy"><figcaption>Lottery UI</figcaption></figure>
+        <figure><img src="img/wire_everrich_1.png" alt="Everrich lottery wireframe" loading="lazy"><figcaption>Wireframe</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 影片（若有影片示範可補上；沒有可刪） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">影片示範</span><span class="i18n-en" lang="en">Demo Video</span></h4>
+      <div class="modal__video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Everrich Lottery Demo" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- 連結（如有媒體報導或官網可補上） -->
+    <div class="modal__links">
+      <!-- <a class="btn-light" href="https://example.com/event" target="_blank" rel="noopener">Event page →</a> -->
+    </div>
   </div>
 </section>
 
-<!-- Project 6: NKSTM -->
+<!-- Project 6: National Kaohsiung Sci-Tech Museum — Service System (模板化＋雙語) -->
 <section id="proj-nkstm-details" class="modal">
   <a href="#mywork" class="modal__backdrop" aria-hidden="true"></a>
   <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="nkstmTitle">
     <a href="#mywork" class="modal__close" aria-label="Close">&times;</a>
-    <h3 id="nkstmTitle" class="modal__title">National Kaohsiung Sci-Tech Museum — Service System</h3>
-    <img src="img/Sci-tech_customer.png" alt="National Sci-Tech Museum line official account" class="modal__img">
-    <ul class="modal__list">
-      <li>Check-in KIOSK、客服系統、LINE OA 導流、兩款互動遊戲</li>
-      <li>常設展長期維運、資料蒐集與報表</li>
-      <li>角色：Project Management</li>
-    </ul>
+
+    <!-- 標題 -->
+    <h3 id="nkstmTitle" class="modal__title">
+      <span class="i18n-zh" lang="zh-Hant">國立科學工藝博物館 — 服務系統</span>
+      <span class="i18n-en" lang="en">National Kaohsiung Sci-Tech Museum — Service System</span>
+    </h3>
+
+    <!-- Hero 圖 -->
+    <figure class="modal__hero">
+      <img src="img/Sci-tech_customer.png" alt="National Sci-Tech Museum customer service system" loading="lazy">
+      <figcaption class="caption i18n-zh" lang="zh-Hant">Check-in KIOSK、客服系統、LINE OA 導流與互動遊戲</figcaption>
+      <figcaption class="caption i18n-en" lang="en">Check-in kiosks, customer service, LINE OA funnel & interactive games</figcaption>
+    </figure>
+
+    <!-- 概述 -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">概述</span><span class="i18n-en" lang="en">Overview</span></h4>
+      <p class="i18n-zh" lang="zh-Hant">
+        在國立科學工藝博物館規劃與實施全館服務系統，包括 Check-in KIOSK、客服平台、LINE 官方帳號導流，以及兩款互動遊戲。
+        設計地端系統串接與資料蒐集流程，產出簡易報表，協助營運決策。
+      </p>
+      <p class="i18n-en" lang="en">
+        Designed and implemented an integrated service system at the National Kaohsiung Sci-Tech Museum, including check-in kiosks, customer service platform, LINE OA funnel, and two interactive games. Established local system integration and data pipelines for simplified reporting and operational insights.
+      </p>
+    </section>
+
+    <!-- 兩欄：我的角色 / 技術棧 -->
+    <div class="modal__grid">
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">我的角色</span><span class="i18n-en" lang="en">My Role</span></h4>
+        <ul>
+          <li class="i18n-zh" lang="zh-Hant">專案管理：需求整理、進度控管、跨部門協調</li>
+          <li class="i18n-en" lang="en">Project management: requirements, scheduling, cross-team coordination</li>
+          <li class="i18n-zh" lang="zh-Hant">系統串接規劃與資料蒐集設計</li>
+          <li class="i18n-en" lang="en">System integration design & data collection setup</li>
+          <li class="i18n-zh" lang="zh-Hant">互動遊戲導入與維運流程建立</li>
+          <li class="i18n-en" lang="en">Deployed interactive games and maintenance workflow</li>
+        </ul>
+      </section>
+
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">技術棧</span><span class="i18n-en" lang="en">Tech Stack</span></h4>
+        <ul class="modal__tags">
+          <li>Kiosk</li><li>Customer Service</li><li>LINE OA</li>
+          <li>Interactive Games</li><li>Data Reporting</li><li>Project Management</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- 成果 -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">成果</span><span class="i18n-en" lang="en">Outcomes</span></h4>
+      <ul class="modal__kpis">
+        <li><strong class="i18n-zh" lang="zh-Hant">完整導流</strong><span class="i18n-zh">（KIOSK → LINE OA → 遊戲互動）</span><span class="i18n-en">Seamless funnel (Kiosk → LINE OA → interactive)</span></li>
+        <li><strong class="i18n-zh" lang="zh-Hant">報表化</strong><span class="i18n-zh">（簡易數據視覺化，助營運決策）</span><span class="i18n-en">Simplified reporting dashboards for decision-making</span></li>
+      </ul>
+    </section>
+
+    <!-- UI / Wireframes -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">介面與線框</span><span class="i18n-en" lang="en">UI & Wireframes</span></h4>
+      <div class="modal__gallery">
+        <figure><img src="img/ui_nkstm_1.png" alt="NKSTM UI screen" loading="lazy"><figcaption>UI Screen</figcaption></figure>
+        <figure><img src="img/wire_nkstm_1.png" alt="NKSTM wireframe" loading="lazy"><figcaption>Wireframe</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 影片（若有替換 VIDEO_ID；沒有可刪） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">影片示範</span><span class="i18n-en" lang="en">Demo Video</span></h4>
+      <div class="modal__video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="NKSTM Service System Demo" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- 連結（如有可補） -->
+    <div class="modal__links">
+      <!-- <a class="btn-light" href="https://example.com/project-nkstm" target="_blank" rel="noopener">Project page →</a> -->
+    </div>
   </div>
 </section>
 
-<!-- Project 8: Lambda RAG -->
 <!-- Project 8: AWS Lambda — AI RAG Assistant (模板化＋雙語位子) -->
 <section id="proj-lambda-details" class="modal">
   <a href="#mywork" class="modal__backdrop" aria-hidden="true"></a>
@@ -114,9 +541,12 @@
       <figcaption class="caption i18n-en" lang="en">Serverless (Lambda / EventBridge / API Gateway) + Vector Retrieval</figcaption>
     </figure>
 
-    <!-- 概述 Overview（保留你原始要點，補齊敘述）-->
+    <!-- 概述 Overview）-->
     <section class="modal__section">
-      <h4><span class="i18n-zh" lang="zh-Hant">概述</span><span class="i18n-en" lang="en">Overview</span></h4>
+      <h4>
+        <span class="i18n-zh" lang="zh-Hant">概述</span>
+        <span class="i18n-en" lang="en">Overview</span>
+      </h4>
       <p class="i18n-zh" lang="zh-Hant">
         本專案以 AWS Serverless 為核心，實作 RAG（Retrieval-Augmented Generation）助理。
         架構包含 Lambda / EventBridge / API Gateway 與向量檢索，並建立 RAG pipeline、品質監控與 function calling 流程。
@@ -127,13 +557,13 @@
       </p>
     </section>
 
-    <!-- 兩欄：我的角色 / 技術棧 -->
+    <!-- my role / tech stack -->
     <div class="modal__grid">
       <section class="modal__section">
         <h4><span class="i18n-zh" lang="zh-Hant">我的角色</span><span class="i18n-en" lang="en">My Role</span></h4>
         <ul>
-          <li class="i18n-zh" lang="zh-Hant">Tech PM / PM：需求定義、PRD、里程碑規劃與驗收</li>
-          <li class="i18n-en" lang="en">Tech PM / PM: PRD, milestones, and acceptance</li>
+          <li class="i18n-zh" lang="zh-Hant">Tech PM：需求定義、PRD、里程碑規劃與驗收</li>
+          <li class="i18n-en" lang="en">Tech PM: PRD, milestones, and acceptance</li>
           <li class="i18n-zh" lang="zh-Hant">設計 RAG pipeline 與品質監控機制（評估回覆品質、錯誤回饋）</li>
           <li class="i18n-en" lang="en">Designed RAG pipeline and quality monitoring (response evaluation & feedback)</li>
           <li class="i18n-zh" lang="zh-Hant">整合 function calling，規劃擴充與維運流程</li>
@@ -154,7 +584,7 @@
       </section>
     </div>
 
-    <!-- 成果（如你有數據可替換；暫留示意，可刪） -->
+    <!-- 成果 -->
     <section class="modal__section">
       <h4><span class="i18n-zh" lang="zh-Hant">成果</span><span class="i18n-en" lang="en">Outcomes</span></h4>
       <ul class="kpis">
@@ -183,19 +613,89 @@
   </div>
 </section>
 
-<!-- Project 9: Terraform Tracker -->
+<!-- Project 9: Terraform — Token Price Tracker (模板化＋雙語) -->
 <section id="proj-terraform-details" class="modal">
   <a href="#mywork" class="modal__backdrop" aria-hidden="true"></a>
   <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="tfTitle">
     <a href="#mywork" class="modal__close" aria-label="Close">&times;</a>
-    <h3 id="tfTitle" class="modal__title">Terraform — Token Price Tracker</h3>
-    <img src="img/terraform.jpeg" alt="Terraform Token Price Tracker" class="modal__img">
-    <ul class="modal__list">
-      <li>IaC 佈署、拉取價格資料、自動化更新</li>
-      <li>告警/監控配置、版本化管理</li>
-      <li>角色：Tech PM / PM</li>
-    </ul>
-    <a href="https://github.com/susancat/terraform_tokenprice_tracker" target="_blank" class="modal__link">GitHub repo →</a>
+
+    <!-- 標題 -->
+    <h3 id="tfTitle" class="modal__title">
+      <span class="i18n-zh" lang="zh-Hant">Terraform — Token 價格追蹤器</span>
+      <span class="i18n-en" lang="en">Terraform — Token Price Tracker</span>
+    </h3>
+
+    <!-- Hero 圖 -->
+    <figure class="modal__hero">
+      <img src="img/terraform.jpeg" alt="Terraform Token Price Tracker" loading="lazy">
+      <figcaption class="caption i18n-zh" lang="zh-Hant">IaC 佈署、自動拉取 Token 價格與告警</figcaption>
+      <figcaption class="caption i18n-en" lang="en">IaC deployment with automated token price fetching and alerts</figcaption>
+    </figure>
+
+    <!-- 概述 -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">概述</span><span class="i18n-en" lang="en">Overview</span></h4>
+      <p class="i18n-zh" lang="zh-Hant">
+        使用 Terraform 進行基礎設施即程式（IaC）佈署，打造一個自動化 Token 價格追蹤系統。定期更新價格資料，並配置告警與監控，以利風險控管與通知。
+      </p>
+      <p class="i18n-en" lang="en">
+        Built a token price tracking system with Terraform-based Infrastructure as Code (IaC). Automated scheduled price fetching with monitoring and alerts for risk management and notifications.
+      </p>
+    </section>
+
+    <!-- 兩欄：我的角色 / 技術棧 -->
+    <div class="modal__grid">
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">我的角色</span><span class="i18n-en" lang="en">My Role</span></h4>
+        <ul>
+          <li class="i18n-zh" lang="zh-Hant">Tech PM：佈署規劃、版本化管理</li>
+          <li class="i18n-en" lang="en">Tech PM: deployment planning, versioning</li>
+          <li class="i18n-zh" lang="zh-Hant">設計 Token 價格資料管線與更新流程</li>
+          <li class="i18n-en" lang="en">Designed token price data pipeline & update flow</li>
+          <li class="i18n-zh" lang="zh-Hant">配置告警與監控，確保穩定性</li>
+          <li class="i18n-en" lang="en">Set up alerts & monitoring for stability</li>
+        </ul>
+      </section>
+
+      <section class="modal__section">
+        <h4><span class="i18n-zh" lang="zh-Hant">技術棧</span><span class="i18n-en" lang="en">Tech Stack</span></h4>
+        <ul class="modal__tags">
+          <li>Terraform</li><li>IaC</li><li>Monitoring</li>
+          <li>Alerts</li><li>Automation</li><li>Tech PM</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- 成果 -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">成果</span><span class="i18n-en" lang="en">Outcomes</span></h4>
+      <ul class="modal__kpis">
+        <li><strong class="i18n-zh" lang="zh-Hant">IaC 自動化</strong><span class="i18n-zh">（基礎設施部署標準化）</span><span class="i18n-en">IaC automation for standardized infra</span></li>
+        <li><strong class="i18n-zh" lang="zh-Hant">即時監控</strong><span class="i18n-zh">（異常通知與快速回應）</span><span class="i18n-en">Real-time monitoring with alerts</span></li>
+      </ul>
+    </section>
+
+    <!-- UI / Wireframes（如有素材可加；沒有就刪） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">介面與線框</span><span class="i18n-en" lang="en">UI & Wireframes</span></h4>
+      <div class="modal__gallery">
+        <figure><img src="img/ui_tf_1.png" alt="Terraform tracker UI" loading="lazy"><figcaption>Tracker UI</figcaption></figure>
+        <figure><img src="img/wire_tf_1.png" alt="Terraform tracker wireframe" loading="lazy"><figcaption>Wireframe</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 影片（如有 Demo 可替換 VIDEO_ID；沒有就刪） -->
+    <section class="modal__section">
+      <h4><span class="i18n-zh" lang="zh-Hant">影片示範</span><span class="i18n-en" lang="en">Demo Video</span></h4>
+      <div class="modal__video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Terraform Tracker Demo" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- 連結 -->
+    <div class="modal__links">
+      <a class="btn-light" href="https://github.com/susancat/terraform_tokenprice_tracker" target="_blank" rel="noopener">GitHub repo →</a>
+    </div>
   </div>
 </section>
 
@@ -218,9 +718,12 @@
       <div id="tab-shopee" class="modal__panel is-active">
         <img src="img/shopee.png" alt="Shopee Projection Mapping" class="modal__img">
         <ul class="modal__list">
-          <li>Projection mapping 整合，跨部門協作與現場校正</li>
-          <li>高並發場域動線規劃、KOL 與廠商協調</li>
-          <li>成果：品牌活動高參與度、即時互動回饋</li>
+          <li class="i18n-zh" lang="zh-Hant">UI、動畫設計、投影牆整合，跨部門協作</li>
+          <li class="i18n-zh" lang="zh-Hant">施工規劃、現場校正，與客戶、配合廠商協調</li>
+          <li class="i18n-zh" lang="zh-Hant">成果：品牌活動高參與度、即時互動回饋</li>
+          <li class="i18n-en" lang="en">Projection mapping integration, 跨部門協作與現場校正</li>
+          <li class="i18n-en" lang="en">高並發場域動線規劃、KOL 與廠商協調</li>
+          <li class="i18n-en" lang="en">成果：品牌活動高參與度、即時互動回饋</li>
         </ul>
       </div>
 

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 首頁 -->
+  <url>
+    <loc>https://susancat.github.io/</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://susancat.github.io/#aboutme</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- My Work -->
+  <url>
+    <loc>https://susancat.github.io/#mywork</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://susancat.github.io/#contactme</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project 1: MOM app -->
+  <url>
+    <loc>https://susancat.github.io/#proj-mom-details</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project 2: L'AiR SaaS -->
+  <url>
+    <loc>https://susancat.github.io/#proj-lair-details</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project 3: Crazy Defense Heroes -->
+  <url>
+    <loc>https://susancat.github.io/#proj-cdh-details</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project 4: Garmania AI Booths -->
+  <url>
+    <loc>https://susancat.github.io/#proj-garmania-details</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project 5: Everrich Lottery System -->
+  <url>
+    <loc>https://susancat.github.io/#proj-everrich-details</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project 6: Sci-Tech Museum -->
+  <url>
+    <loc>https://susancat.github.io/#proj-scitech-details</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project 7: Interactive Installations -->
+  <url>
+    <loc>https://susancat.github.io/#installations-details</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project 8: AWS Lambda AI RAG Assistant -->
+  <url>
+    <loc>https://susancat.github.io/#proj-lambda-details</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Project 9: Terraform Token Tracker -->
+  <url>
+    <loc>https://susancat.github.io/#proj-terraform-details</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
