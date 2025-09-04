@@ -50,10 +50,60 @@ body {
   }
 }
 
+/* ===============================
+
+$header-height: 72px !default; // 依你的實際 navbar 高度調整
+
 [id] {
-  scroll-margin-top: 72px;
+  scroll-margin-top: $header-height;
 }
 
+/* ===============================
+   i18n smooth toggle
+   =============================== */
+:root {
+  --i18n-dur: 240ms;
+}
+
+/* 預設兩種語系的區塊都支援過渡 */
+.i18n-zh,
+.i18n-en {
+  transition: opacity var(--i18n-dur) ease, filter var(--i18n-dur) ease;
+  will-change: opacity, filter;
+}
+
+/* 切到繁中時，英語淡出並禁用互動 */
+:root[data-lang=zh] .i18n-en {
+  opacity: 0;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* 切到英文時，中文淡出並禁用互動 */
+:root[data-lang=en] .i18n-zh {
+  opacity: 0;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* 建議：讓導航與標題的語句在排版上各自佔一行，避免高度抖動 */
+.navigation__link .i18n-zh,
+.navigation__link .i18n-en {
+  display: inline-block;
+}
+
+.modal__title .i18n-zh,
+.modal__title .i18n-en {
+  display: block;
+}
+
+/* 低動態偏好時關閉動畫（無障礙） */
+@media (prefers-reduced-motion: reduce) {
+  .i18n-zh, .i18n-en {
+    transition: none;
+    filter: none;
+  }
+}
 /* 當前語系高亮（全站） */
 :root[data-lang=zh] .navigation__lang-btn[data-set-lang=zh],
 :root[data-lang=en] .navigation__lang-btn[data-set-lang=en] {
@@ -837,14 +887,31 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
+  padding: 0;
 }
 .modal__tags li, .modal .tags li {
-  padding: 0.35rem 0.7rem; /* ⬆️ 增加可點面積 */
+  list-style: none;
+  padding: 0.35rem 0.7rem;
   background: #f0f0f0;
   border-radius: 0.6rem;
-  font-size: 0.98rem; /* ⬆️ 放大 chip 文字 */
+  font-size: 0.98rem;
   color: #222;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) inset;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+.modal__tags li:hover, .modal .tags li:hover {
+  background: #e4e4e4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+.modal__tags li:active, .modal .tags li:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+}
+.modal__tags li:focus-visible, .modal .tags li:focus-visible {
+  outline: 2px solid #aaa;
+  outline-offset: 2px;
 }
 .modal__kpis, .modal .kpis {
   display: flex;
@@ -890,12 +957,30 @@ body {
   border: 0;
 }
 .modal__links {
-  display: flex;
-  gap: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   margin-top: 1.2rem;
 }
 .modal__links a {
-  font-size: 1rem; /* ⬆️ 連結字級 */
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.modal__links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.modal__links a:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+@media (max-width: 600px) {
+  .modal__links {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* 載入遠端 partial 時的保護 */

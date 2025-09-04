@@ -73,3 +73,21 @@ async function loadModals() {
 }
 
 document.addEventListener('DOMContentLoaded', loadModals);
+
+// 語系按鈕：<button class="navigation__lang-btn" data-set-lang="en">EN</button>
+const langBtns = document.querySelectorAll('.navigation__lang-btn');
+const root = document.documentElement;
+
+langBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.setLang;
+    if (!lang || root.getAttribute('data-lang') === lang) return;
+
+    // 加一個短暫狀態 class（可用來做全頁過渡或延長動畫）
+    root.classList.add('lang-switching');
+    root.setAttribute('data-lang', lang);
+
+    // 依 CSS 變數時間清掉狀態（和 --i18n-dur 對齊即可）
+    setTimeout(() => root.classList.remove('lang-switching'), 260);
+  });
+});

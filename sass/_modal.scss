@@ -186,14 +186,34 @@
     display: flex;
     flex-wrap: wrap;
     gap: .55rem;
+    padding: 0;   // 防止 ul 預設 padding
 
     li {
-      padding: .35rem .7rem;  /* ⬆️ 增加可點面積 */
+      list-style: none;          
+      padding: .35rem .7rem;     
       background: #f0f0f0;
       border-radius: .6rem;
-      font-size: .98rem;      /* ⬆️ 放大 chip 文字 */
+      font-size: .98rem;         
       color: #222;
       box-shadow: 0 1px 0 rgba(0,0,0,.05) inset;
+      display: inline-block;
+      transition: all .2s ease;  // ✅ 平滑過渡
+
+      &:hover {
+        background: #e4e4e4;     // 淡灰 hover
+        box-shadow: 0 2px 6px rgba(0,0,0,.12);
+        transform: translateY(-1px);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 3px rgba(0,0,0,.1) inset;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #aaa;
+        outline-offset: 2px;
+      }
     }
   }
 
@@ -253,12 +273,31 @@
 
   /* ---- Links ---- */
   &__links {
-    display: flex;
-    gap: .9rem;
+    display: grid;                             // ✅ 改用 grid
+    grid-template-columns: repeat(2, 1fr);     // 一行兩個
+    gap: 1rem;                                 // 間距
+
     margin-top: 1.2rem;
 
     a {
-      font-size: 1rem;        /* ⬆️ 連結字級 */
+      font-size: 1rem;
+      text-align: center;                      // 置中按鈕文字
+      padding: .7rem 1rem;
+      border-radius: 6px;
+      transition: all .2s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,.15);
+      }
+      &:active {
+        transform: translateY(0);
+        box-shadow: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;              // 手機一行一個
     }
   }
 }
