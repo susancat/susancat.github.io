@@ -1,7 +1,8 @@
 //BUTTON INLINE
 .btn-inline {
     border: none;
-    color: $color-secondary-dark;
+    color: #6b7280;            // 中灰
+    border-bottom-color: currentColor;
     font-size: 1.4rem;
     border-bottom: 1px solid currentColor;
     padding-bottom: 2px;
@@ -17,7 +18,7 @@
     }
 
     &:hover {
-        color:  $color-primary-light;
+        color: #ffffff;
 
         span {
             margin-left: 8px;
@@ -111,56 +112,62 @@
         /* we put .75s delay here */
         animation-fill-mode: backwards;
     }
-
-    
 }
 
 .btn-light {
-    display:inline-block;
-    padding: 0.8rem 1.6rem;
-    border: 0;
-    margin-bottom: .5rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 3px;
-    background-color: $color-grey-light-1;
-    transition: all .4s ease-out;
-    width: 65%;
-    text-align: center;  
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: $color-grey-light-1;
+  color: $color-grey-dark-3;
+  text-align: center;
+  width: 65%;
+  text-decoration: none;
+  transition: all .3s ease;
 
-    &:link,
-    &:visited {
-        color: $color-grey-dark-3;
-        text-decoration: none;
-    }
+  &:hover,
+  &:focus {
+    background-color: darken($color-grey-light-1, 8%);
+    color: $color-black;  // hover 時字體更深，對比更明顯
+    box-shadow: 0 3px 6px rgba(0,0,0,.15);
+    transform: translateY(-2px);
+  }
 
-    &:hover {
-        background-color: $color-secondary-dark;
-    }
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
 }
 
 .btn-dark {
-    display: inline-block;
-    padding: 0.8rem 1.6rem;
-    border: 0;
-    margin-bottom: .5rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 3px;
-    background: $color-grey-dark-3;
-    transition: all .4s ease-out;
-    width: 65%;
-    text-align: center;  
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: $color-grey-dark-3;
+  color: #fff;
+  text-align: center;
+  width: 65%;
+  text-decoration: none;
+  transition: all .3s ease;
 
-    &:link,
-    &:visited {
-        color: #fff;
-        text-decoration: none;
-    }
+  &:hover,
+  &:focus {
+    background-color: lighten($color-grey-dark-3, 8%); // hover 時變淺一點
+    color: #fff; // 保持字白，不被吃掉
+    box-shadow: 0 3px 6px rgba(0,0,0,.2);
+    transform: translateY(-2px);
+  }
 
-    &:hover {
-        background-color: $color-secondary-dark;
-    }
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
 }
 
 .btn-big {
@@ -200,5 +207,17 @@
     &:hover {
         transform: translateY(-1.5rem) scale(1.03);
         padding: 1.5rem;
+    }
+
+        /* 只在作品集的按鈕需要 65% 寬度 */
+    .works__proj .btn-light,
+    .works__proj .btn-dark {
+    width: 65%;
+    }
+
+    /* 其他地方（例如 aboutme）按鈕走自適應 */
+    .aboutme .btn-light,
+    .aboutme .btn-dark {
+    width: auto;
     }
 }
